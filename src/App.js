@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Button from "./components/Button/Button";
 import DropDownMenu from "./components/DropDownMenu/DropDownMenu";
 
 
@@ -7,6 +8,9 @@ function App() {
   return (
     <div className="App">
       <DropDownMenu items={items} />
+      <Button text={'+ add item'}/>
+      <Button text={'cancel'} isCancel/>
+      <Button text={'delete'} isDelete/>
     </div>
   );
 }
