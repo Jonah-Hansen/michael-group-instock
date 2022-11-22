@@ -1,10 +1,11 @@
 import React from 'react'
 import './DropDownMenu.scss'
 
-export default function DropDownMenu() {
+export default function DropDownMenu({ items }) {
   return (
-    <div>
-      
-    </div>
+    <select className='drop-down-menu'>
+      <option value="" hidden>Please select</option>
+      {items.map(item => <option value={item}>{item}</option>)}
+   </select>
   )
 }
