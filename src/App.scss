@@ -2,8 +2,12 @@
 @use '/styles/partials/mixins';
 @use '/styles/partials/variables';
 
+*, *::before, *::after {
+    Box-sizing: border-box;
+    margin: 0; 
+    }
+
 body {
-    @include box-size-reset;
     font-family: 'Titillium Web', 'Courier New', monospace;
 
     button, input, select, textarea { 
