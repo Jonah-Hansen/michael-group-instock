@@ -1,0 +1,23 @@
+@use '../../../styles/partials/fonts' as *;
+@use '../../../styles/partials/variables' as *;
+@use '../../../styles/partials/mixins' as *;
+.radio-button {
+    display: flex;
+
+    &__input:checked + &__text{
+        color: $primary-instock-black;
+    }
+
+    &__text {
+        color: $secondary-cloud;
+        font-size: 0.6875rem;
+        line-height: 1rem;
+        font-weight: 400;
+        margin-left: 0.25em;
+
+        @include tablet {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+        }
+    }
+}

@@ -3,8 +3,8 @@
 @use './styles/partials/variables';
 
 *, *::before, *::after {
-  Box-sizing: border-box;
-  margin: 0;
+  box-sizing: border-box;
+  margin: 0; 
 }
 
 body {
@@ -14,3 +14,4 @@ body {
 button, input, select, textarea {
   font: inherit;
 }
+

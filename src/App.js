@@ -3,7 +3,9 @@ import './App.scss';
 import NewWarehouse from "./pages/NewWarehouse/NewWarehouse";
 
 function App() {
+
   return (
+
     <BrowserRouter>
       {/* <Header /> */}
       <Routes>
@@ -24,4 +26,7 @@ function App() {
   );
 }
 
+
 export default App;
+
+
