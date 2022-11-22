@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+// tablet breakpoint
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+// desktop breakpoint
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+// box size reset
+@mixin box-size-reset {
+    margin: 0;
+    padding: 0;
+}

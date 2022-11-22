@@ -1,0 +1,13 @@
+@use '/styles/partials/fonts';
+@use '/styles/partials/mixins';
+@use '/styles/partials/variables';
+
+body {
+    @include box-size-reset;
+    font-family: 'Titillium Web', 'Courier New', monospace;
+
+    button, input, select, textarea { 
+        font: inherit;
+    }
+}
+
