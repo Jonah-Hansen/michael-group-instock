@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import './App.scss';
 import NewWarehouse from "./pages/NewWarehouse/NewWarehouse";
-
 
 function App() {
   return (
