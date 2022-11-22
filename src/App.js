@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <DropDownMenu items={items} />
       <Button text={'+ add item'}/>
-      <Button text={'cancel'} isCancel/>
-      <Button text={'delete'} isDelete/>
+      <Button text={'cancel'} type="cancel"/>
+      <Button text={'delete'} type="delete"/>
     </div>
   );
 }
