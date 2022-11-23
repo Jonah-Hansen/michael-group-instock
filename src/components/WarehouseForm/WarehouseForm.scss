@@ -1,0 +1,5 @@
+@use '../../styles/partials/mixins' as *;
+
+.warehouse-form {
+  @include edge-padding(mobile);
+}

@@ -7,8 +7,15 @@
     border-radius: 1.25rem;
     padding: 0.1rem 0.5rem;
     color: $secondary-cloud;
+
     width: 100%;
     font-size: 0.8125rem;
+
+    height: 1.75rem;
+
+    @include tablet {
+        height: 1.875rem;
+    }
 
     &:focus {
         color: $primary-instock-black;
