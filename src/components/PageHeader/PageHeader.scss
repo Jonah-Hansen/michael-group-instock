@@ -4,11 +4,12 @@
 .page-header {
   display: flex;
   align-items: center;
-
+  padding-left: 1rem;
   border-bottom: 1px solid $secondary-cloud;
 
   &__heading {
     font-size: 1.75rem;
+    text-transform: capitalize;
     font-weight: 600;
   }
 
