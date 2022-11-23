@@ -17,6 +17,7 @@
 
   &__heading {
     font-size: 1.75rem;
+    text-transform: capitalize;
     font-weight: 600;
 
     @include tablet {

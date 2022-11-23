@@ -1,0 +1,26 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.background {
+    background-color: $background-light-grey;
+    width: 100%;
+    min-height: 1rem;
+    padding: 1rem;
+
+    @include tablet {
+        padding: 1rem 2rem;
+    }
+
+    @include desktop {
+        padding: 1rem 5rem;
+    }
+}
+
+.page {
+     width: 100%;
+    background-color: $primary-instock-white;
+    filter: drop-shadow(0.2rem 0.2rem 0.5rem);
+    border-radius: 0.25rem;
+}
+

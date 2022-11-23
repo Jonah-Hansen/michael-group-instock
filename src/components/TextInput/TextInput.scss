@@ -17,13 +17,18 @@
   }
 
   &__input {
-    height: 2.25rem;
+    height: 1.75rem;
     padding: 0 1rem;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     border: 1px solid $secondary-cloud;
+
+    @include tablet {
+      height: 1.875rem;
+    }
 
     &::placeholder {
       color: $secondary-slate;
+      font-size: 0.8125rem;
     }
 
     &:focus-visible {
