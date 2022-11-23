@@ -1,0 +1,22 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.page-header {
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid $secondary-cloud;
+
+  &__heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+
+  &__back {
+    padding: 0;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url('../../assets/icons/arrow_back-24px.svg') no-repeat center;
+  }
+}

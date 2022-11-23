@@ -1,18 +1,17 @@
-@use '/styles/partials/fonts';
-@use '/styles/partials/mixins';
-@use '/styles/partials/variables';
+@use './styles/partials/fonts';
+@use './styles/partials/mixins';
+@use './styles/partials/variables';
 
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0px; 
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    font-family: 'Titillium Web', 'Courier New', monospace;
-   
-
-    button, input, select, textarea { 
-        font: inherit;
-    }
+  font-family: 'Titillium Web', 'Courier New', monospace;
 }
 
+button, input, select, textarea {
+  font: inherit;
+  text-transform: inherit;
+}

@@ -1,0 +1,44 @@
+@use '../../../styles/partials/fonts' as *;
+@use '../../../styles/partials/variables' as *;
+@use '../../../styles/partials/mixins' as *;
+
+.button {
+    padding: 0.1rem 1rem;
+    border-color: transparent;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: $primary-instock-white;
+    background-color: $primary-instock-indigo;
+    height: 1.75rem;
+
+    @include tablet {
+        height: 1.875rem;
+    }
+    
+    &:hover {
+        background-color: $background-graphite;
+    }
+
+    &--cancel {
+        background-color: $primary-instock-white;
+        color: $primary-instock-black;
+        border-color: $secondary-slate;
+
+        &:hover {
+            border-color: $primary-instock-indigo;
+            color: $primary-instock-indigo;
+            background-color: $primary-instock-white;
+        }
+    }
+
+    &--delete {
+        background-color: $supporting-red;
+        border-color: transparent;
+        color: $primary-instock-white;
+
+        &:hover {
+            background-color: $background-graphite;
+        }
+    }
+}
