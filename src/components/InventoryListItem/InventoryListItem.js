@@ -26,8 +26,6 @@ function InventoryListItem () {
                 <img className="wh-row__actions-delete" src={deleteIcon} alt="red garbage can delete" />
                 <img className="wh-row__actions-edit" src={editIcon} alt="blue pen representing edit" />
             </div>
-
-
         </div>
     )
 }
