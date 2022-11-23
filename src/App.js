@@ -1,20 +1,21 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import InventoryList from "./components/InventoryList/InventoryList";
-import InventoryListItem from "./components/InventoryListItem/InventoryListItem";
+import InventoryListItem from "./components/InventoryListItem/InventoryListItem";import './App.scss';
+import NewWarehouse from "./pages/NewWarehouse/NewWarehouse";
 
 function App() {
   return (
     <BrowserRouter>
-      <InventoryList />
+      {/* <Header /> */}
       <Routes>
         <Route className="" path="/" element={<Navigate to='/warehouses' />} />
-        Warehouse Routes
+        {/* Warehouse Routes */}
         <Route path="/warehouses" />
         <Route path="/warehouses/:warehouseid" />
         <Route path="/warehouses/:warehouseid/edit" />
-        <Route path="/warehouses/new" />
+        <Route path="/warehouses/new" element={<NewWarehouse />} />
 
-        Inventory Routes
+        {/* Inventory Routes */}
         <Route path="/inventory" />
         <Route path="/inventory/:inventoryid" />
         <Route path="/inventory/:inventoryid/edit" />

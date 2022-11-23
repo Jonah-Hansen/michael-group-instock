@@ -1,0 +1,42 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.text-input {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+
+  &__heading {
+    font-size: .8125rem;
+    font-weight: 600;
+  }
+
+  &__input {
+    height: 2.25rem;
+    padding: 0 1rem;
+    border-radius: 20px;
+    border: 1px solid $secondary-cloud;
+
+    &::placeholder {
+      color: $secondary-slate;
+    }
+
+    &:focus-visible {
+      outline: 1px solid $primary-instock-indigo;
+    }
+
+    &--large {
+      @extend .text-input__input;
+      resize: none;
+      height: 5rem;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+
+    &--search {
+      @extend .text-input__input;
+      background: url('../../assets/icons/search-24px.svg') no-repeat right 1rem center;
+      padding-right: 2.5rem;
+    }
+  }
+}
