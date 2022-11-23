@@ -1,5 +1,28 @@
 @use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
 .warehouse-form {
-  @include edge-padding(mobile);
+
+  &__heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    @include edge-padding(mobile);
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid $secondary-cloud;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: $background-light-grey;
+  }
 }

@@ -4,6 +4,8 @@
 
 .button {
   line-height: 0;
+  font-size: .8125rem;
+  font-weight: 600;
   padding: 0.1rem 1rem;
   border-color: transparent;
   border-radius: 1.25rem;
@@ -12,6 +14,8 @@
   color: $primary-instock-white;
   background-color: $primary-instock-indigo;
   height: 1.75rem;
+  min-width: 8.375rem;
+  width: 100%;
 
   @include tablet {
     height: 1.875rem;

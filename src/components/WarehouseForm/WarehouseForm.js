@@ -1,8 +1,11 @@
+import { useNavigate } from 'react-router-dom'
 import Button from '../Button/Button'
 import TextInput from '../TextInput/TextInput'
 import './WarehouseForm.scss'
 
 function WarehouseForm() {
+  const navigate = useNavigate()
+
   const handleSubmit = (event) => {
     event.preventDefault()
   }
@@ -26,7 +29,7 @@ function WarehouseForm() {
         </section>
       </div>
       <div className='warehouse-form__buttons'>
-        <Button type='cancel' text='cancel' />
+        <Button type='cancel' text='cancel' onClick={() => navigate(-1)} />
         <Button type={'submit'} text={'+ add warehouse'} />
       </div>
     </form>
