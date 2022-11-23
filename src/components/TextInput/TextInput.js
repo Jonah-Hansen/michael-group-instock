@@ -9,12 +9,12 @@ function TextInput({ type, label, placeholder, name, value, className }) {
   switch (type) {
     case 'small':
       input =
-        <input className={`text-input__input`} placeholder={placeholder} name={name} defaultValue={value} />
+        <input className={`text-input__input`} placeholder={placeholder || label} name={name} defaultValue={value} />
       break;
 
     case 'large':
       input =
-        <textarea className='text-input__input--large' placeholder={placeholder} name={name} defaultValue={value} />
+        <textarea className='text-input__input--large' placeholder={placeholder || label} name={name} defaultValue={value} />
       break;
 
     case 'search':
@@ -24,7 +24,7 @@ function TextInput({ type, label, placeholder, name, value, className }) {
 
     case 'tel':
       input =
-        <input type={type} className='text-input__input' placeholder={placeholder} name={name} defaultValue={value} />
+        <input type={type} className='text-input__input' placeholder={placeholder || label} name={name} defaultValue={value} />
       break;
 
     case 'email':

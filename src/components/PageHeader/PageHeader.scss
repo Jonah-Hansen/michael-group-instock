@@ -4,6 +4,10 @@
 .page-header {
   display: flex;
   align-items: center;
+  gap: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include edge-padding(mobile);
 
   border-bottom: 1px solid $secondary-cloud;
 
