@@ -20,7 +20,11 @@
 .page {
      width: 100%;
     background-color: $primary-instock-white;
-    filter: drop-shadow(0.2rem 0.2rem 0.5rem);
+    filter: drop-shadow(0.2rem 0.2rem 0.5rem $secondary-cloud);
     border-radius: 0.25rem;
+
+    @include tablet {
+        margin-bottom: 3rem;
+    }
 }
 
