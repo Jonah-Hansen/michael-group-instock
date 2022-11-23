@@ -1,0 +1,15 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.footer {
+    padding: 1.5rem 0 0;
+    text-align: center;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+}
