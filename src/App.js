@@ -3,6 +3,7 @@ import './App.scss';
 import AddNewInventoryItem from "./pages/AddNewInventoryItem/AddNewInventoryItem";
 import NewWarehouse from "./pages/NewWarehouse/NewWarehouse";
 import Header from "./components/Header/Header"
+import InventoryItem from './pages/InventoryItem/InventoryItem'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
 
         {/* Inventory Routes */}
         <Route path="/inventory" />
-        <Route path="/inventory/:inventoryid" />
+        <Route path="/inventory/:inventoryid" element={<InventoryItem /> } />
         <Route path="/inventory/:inventoryid/edit" />
         <Route path="/inventory/new" element={ <AddNewInventoryItem />} />
       </Routes>
