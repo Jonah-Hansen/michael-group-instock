@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
+import Header from "./components/Header/Header"
+import "./App.scss";
 
 function App() {
   return (
@@ -7,10 +8,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
+          
           <Route className="" path="/" element={<Navigate to='/warehouses' />} />
 
           {/* Warehouse Routes */}
-          <Route className="" path="/warehouses" element={ } />
+          <Route className="" path="/warehouses" element={<Header /> } />
           <Route className="" path="/warehouses/:warehouseid" element={ } />
           <Route className="" path="/warehouses/edit" element={ } />
           <Route className="" path="/warehouses/add" element={ } />
