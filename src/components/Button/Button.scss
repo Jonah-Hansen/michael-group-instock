@@ -1,16 +1,16 @@
-@use '../../../styles/partials/fonts' as *;
-@use '../../../styles/partials/variables' as *;
-@use '../../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
 .button {
-    padding: 0.1rem 1rem;
+    padding: 0.0rem 1rem 0.1rem;
     border-color: transparent;
     border-radius: 1.25rem;
     cursor: pointer;
     text-transform: capitalize;
     color: $primary-instock-white;
     background-color: $primary-instock-indigo;
-    height: 1.75rem;
+    height: 1.75rem;;
 
     @include tablet {
         height: 1.875rem;
