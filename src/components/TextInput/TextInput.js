@@ -24,12 +24,12 @@ function TextInput({ type, label, placeholder, name, value, className }) {
 
     case 'tel':
       input =
-        <input type={type} className='text-input__input' placeholder={placeholder || label} name={name} defaultValue={value} />
+        <input type={type} className='text-input__input--contact' placeholder={placeholder || label} name={name} defaultValue={value} />
       break;
 
     case 'email':
       input =
-        <input type={type} className='text-input__input' placeholder={placeholder || label} name={name} defaultValue={value} />
+        <input type={type} className='text-input__input--contact' placeholder={placeholder || label} name={name} defaultValue={value} />
       break;
 
     default:
