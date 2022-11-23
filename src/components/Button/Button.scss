@@ -3,42 +3,49 @@
 @use '../../styles/partials/mixins' as *;
 
 .button {
-    padding: 0.0rem 1rem 0.1rem;
-    border-color: transparent;
-    border-radius: 1.25rem;
-    cursor: pointer;
-    text-transform: capitalize;
-    color: $primary-instock-white;
-    background-color: $primary-instock-indigo;
-    height: 1.75rem;;
+  line-height: 0;
+  font-size: .8125rem;
+  font-weight: 600;
+  padding: 0.1rem 1rem;
+  border-color: transparent;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: $primary-instock-white;
+  background-color: $primary-instock-indigo;
+  height: 1.75rem;
+  min-width: 8.375rem;
+  width: 100%;
 
-    @include tablet {
-        height: 1.875rem;
-    }
-    
+  @include tablet {
+    height: 1.875rem;
+    min-width: 0;
+    width: fit-content;
+  }
+
+  &:hover {
+    background-color: $background-graphite;
+  }
+
+  &--cancel {
+    background-color: $primary-instock-white;
+    color: $primary-instock-black;
+    border-color: $secondary-slate;
+
     &:hover {
-        background-color: $background-graphite;
+      border-color: $primary-instock-indigo;
+      color: $primary-instock-indigo;
+      background-color: $primary-instock-white;
     }
+  }
 
-    &--cancel {
-        background-color: $primary-instock-white;
-        color: $primary-instock-black;
-        border-color: $secondary-slate;
+  &--delete {
+    background-color: $supporting-red;
+    border-color: transparent;
+    color: $primary-instock-white;
 
-        &:hover {
-            border-color: $primary-instock-indigo;
-            color: $primary-instock-indigo;
-            background-color: $primary-instock-white;
-        }
+    &:hover {
+      background-color: $background-graphite;
     }
-
-    &--delete {
-        background-color: $supporting-red;
-        border-color: transparent;
-        color: $primary-instock-white;
-
-        &:hover {
-            background-color: $background-graphite;
-        }
-    }
+  }
 }

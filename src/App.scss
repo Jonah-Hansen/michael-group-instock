@@ -1,6 +1,6 @@
 @use './styles/partials/fonts';
 @use './styles/partials/mixins';
-@use './styles/partials/variables';
+@use './styles/partials/variables' as *;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Titillium Web', 'Courier New', monospace;
+  color: $primary-instock-black;
 }
 
 button, input, select, textarea {
