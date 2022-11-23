@@ -1,30 +1,26 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
+import InventoryList from "./components/InventoryList/InventoryList";
+import InventoryListItem from "./components/InventoryListItem/InventoryListItem";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route className="" path="/" element={<Navigate to='/warehouses' />} />
+    <BrowserRouter>
+      <InventoryList />
+      <Routes>
+        <Route className="" path="/" element={<Navigate to='/warehouses' />} />
+        Warehouse Routes
+        <Route path="/warehouses" />
+        <Route path="/warehouses/:warehouseid" />
+        <Route path="/warehouses/:warehouseid/edit" />
+        <Route path="/warehouses/new" />
 
-          {/* Warehouse Routes */}
-          <Route className="" path="/warehouses" element={ } />
-          <Route className="" path="/warehouses/:warehouseid" element={ } />
-          <Route className="" path="/warehouses/edit" element={ } />
-          <Route className="" path="/warehouses/add" element={ } />
-
-          {/* Inventory Routes */}
-          <Route className="" path="/inventory" element={ } />
-          <Route className="" path="/inventory/:inventoryid" element={ } />
-          <Route className="" path="/inventory/edit" element={ } />
-          <Route className="" path="/inventory/add" element={ } />
-
-        </Routes>
-      </BrowserRouter>
-
-    </div>
+        Inventory Routes
+        <Route path="/inventory" />
+        <Route path="/inventory/:inventoryid" />
+        <Route path="/inventory/:inventoryid/edit" />
+        <Route path="/inventory/new" />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
