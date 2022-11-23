@@ -19,6 +19,8 @@
 
   @include tablet {
     height: 1.875rem;
+    min-width: 0;
+    width: fit-content;
   }
 
   &:hover {

@@ -13,7 +13,7 @@ function WarehouseForm() {
   return (
     <form className='warehouse-form' onSubmit={handleSubmit} >
       <div className='warehouse-form__details-container'>
-        <section className='warehouse-form__details'>
+        <section className='warehouse-form__details--first'>
           <h2 className='warehouse-form__heading'>Warehouse Details</h2>
           <TextInput type='small' label='Warehouse Name' />
           <TextInput type='small' label='street address' />
