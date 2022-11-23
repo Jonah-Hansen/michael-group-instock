@@ -3,7 +3,6 @@
 @use '../../styles/partials/mixins' as *;
 
 .new-inventory-form {
-    @include box-size-reset;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
