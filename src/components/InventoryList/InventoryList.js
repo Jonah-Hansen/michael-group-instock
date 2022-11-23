@@ -8,10 +8,9 @@ function InventoryList () {
     const [inventoryData , setInventoryData] = useState([])
 
     useEffect(()=> {
-        axios.get(`http://localhost:8080/inventory`)
+        axios.get(`http://localhost:8080/warehouse/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9/inventory`)
         .then ((response)=> {
-        //    setInventoryData(response.data);
-           console.log(response)
+           setInventoryData(response.data)
         })
         .catch ((error) => {
             console.log(error)

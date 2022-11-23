@@ -1,0 +1,14 @@
+.inv-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inv-row__inv {
+    display: flex;
+    flex-direction: row;
+
+    &-item {
+        width: 7rem;
+    }
+}

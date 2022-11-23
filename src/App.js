@@ -8,6 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* <Header /> */}
+      <InventoryList />
       <Routes>
         <Route className="" path="/" element={<Navigate to='/warehouses' />} />
         {/* Warehouse Routes */}
