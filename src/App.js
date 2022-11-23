@@ -1,40 +1,27 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Button from "./components/Button/Button";
-import DropDownMenu from "./components/DropDownMenu/DropDownMenu";
-
+import './App.scss';
+import NewWarehouse from "./pages/NewWarehouse/NewWarehouse";
 
 function App() {
-    const items = ['banana', 'strawberry', 'apples']
   return (
-    <div className="App">
-      <DropDownMenu items={items} />
-      <Button text={'+ add item'}/>
-      <Button text={'cancel'} type="cancel"/>
-      <Button text={'delete'} type="delete"/>
-    </div>
+    <BrowserRouter>
+      {/* <Header /> */}
+      <Routes>
+        <Route className="" path="/" element={<Navigate to='/warehouses' />} />
+        {/* Warehouse Routes */}
+        <Route path="/warehouses" />
+        <Route path="/warehouses/:warehouseid" />
+        <Route path="/warehouses/:warehouseid/edit" />
+        <Route path="/warehouses/new" element={<NewWarehouse />} />
+
+        {/* Inventory Routes */}
+        <Route path="/inventory" />
+        <Route path="/inventory/:inventoryid" />
+        <Route path="/inventory/:inventoryid/edit" />
+        <Route path="/inventory/new" />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
-
-/**
- *  <BrowserRouter>
-        {/* <Header /> */
-        // <Routes>
-        //   <Route className="" path="/" element={<Navigate to='/warehouses' />} />
-
-          {/* Warehouse Routes */}
-          // <Route className="" path="/warehouses" element={<></> } />
-          // <Route className="" path="/warehouses/:warehouseid" element={<></> } />
-          // <Route className="" path="/warehouses/edit" element={<></> } />
-          // <Route className="" path="/warehouses/add" element={ <></>} />
-
-          {/* Inventory Routes */}
-          // <Route className="" path="/inventory" element={ <></>} />
-          // <Route className="" path="/inventory/:inventoryid" element={<></> } />
-          // <Route className="" path="/inventory/edit" element={ <></>} />
-          // <Route className="" path="/inventory/add" element={ <></>} />
-
-      //   </Routes>
-      // </BrowserRouter>
