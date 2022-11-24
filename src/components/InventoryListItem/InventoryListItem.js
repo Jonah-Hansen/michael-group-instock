@@ -5,14 +5,6 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 
 function InventoryListItem ({name , quantity , category , status}) {
 
-    function instock({quantity}) {
-        if ({quantity} > 0) {
-           return "inv-row__instock"
-        } else {
-            return "inv-row__outstock"
-        }
-    }
-
     return (
         <div className="inv-row">
             <div className="inv-row__inv">
@@ -20,7 +12,9 @@ function InventoryListItem ({name , quantity , category , status}) {
                 <img className="inv-row__inv-icon" src={arrowIcon} alt="chevron right" />
             </div>
             <p className="inv-row__cat">{category}</p>
-            <p className={instock}>{status}</p>
+            <div className="inv-row__stock">
+                <p className={quantity ? 'inv-row__in-stock' : 'inv-row__out-stock' }>{status}</p>
+            </div>
             <p className="inv-row__quantity">{quantity}</p>
             <div className="inv-row__actions">
                 <img className="inv-row__actions-delete" src={deleteIcon} alt="red garbage can delete" />

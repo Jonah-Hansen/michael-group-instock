@@ -1,0 +1,101 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as responsive;
+
+p {
+    color: $secondary-slate;
+}
+
+.wh {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid $secondary-cloud;
+
+    @include responsive.tablet {
+        flex-direction: row;
+        border: none;
+
+    }
+}
+
+.wh-address {
+    margin-bottom: 2rem;
+
+    @include responsive.tablet {
+        border-right: 1px solid $secondary-cloud;
+        padding-right: 23%;
+        margin-bottom: 0rem;
+    }
+    
+    &__title {
+        padding-top: 0.25rem;
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+    &__address {
+        font-size: 0.815rem;
+        @include responsive.tablet {
+            width: 9rem;
+        }
+       
+    }
+}
+
+.wh-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    @include responsive.tablet {
+        margin-left: 3%;
+    }
+
+}
+
+.wh-contact-name {
+    
+    @include responsive.tablet {
+        padding-left: 2rem;
+        margin-right: 1rem;
+    }
+   
+    &__title {
+        padding-top: 0.25rem;
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+
+    &__name {
+        width: 9rem;
+        font-size: 0.815rem;
+    }
+
+    &__position {
+        font-size: 0.815rem;
+    }
+}
+
+.wh-contact-info {
+    
+    @include responsive.tablet {
+      margin-left: 7%;
+    }
+   
+    &__title {
+        padding-top: 0.25rem;
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+
+    &__phone {
+        width: 9rem;
+        font-size: 0.815rem;
+    }
+
+    &__email {
+        font-size: 0.815rem;
+    }
+}
