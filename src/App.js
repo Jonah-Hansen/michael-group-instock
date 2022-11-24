@@ -17,13 +17,14 @@ function App() {
           <Route path="/warehouses/:warehouseid/edit" />
           <Route path="/warehouses/new" element={<NewWarehouse />} />
 
-          {/* Inventory Routes */}
-          <Route path="/inventory" />
-          <Route path="/inventory/:inventoryid" />
-          <Route path="/inventory/:inventoryid/edit" />
-          <Route path="/inventory/new" element={<AddNewInventoryItem />} />
-        </Routes>
-      </main>
+
+        {/* Inventory Routes */}
+        <Route path="/inventory" />
+        <Route path="/inventory/:inventoryid" element={<InventoryItem /> } />
+        <Route path="/inventory/:inventoryid/edit" />
+        <Route path="/inventory/new" element={ <AddNewInventoryItem />} />
+      </Routes>
+
     </BrowserRouter>
   );
 }
