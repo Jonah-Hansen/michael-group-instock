@@ -1,5 +1,9 @@
 import axios from "axios"
-const PORT = process.env.REACT_APP_PORT || 8085 // change the default port accordingly
+
+const {
+REACT_APP_PORT: PORT = "8080", // change the default port accordingly
+REACT_APP_BACKEND_URL: URL = "http://localhost"
+} = process.env; 
 /**
  * note: with axiosInstance you do not need to type the baseURL every time.
  * usage: import axiosInstance to the file you're working on. 
