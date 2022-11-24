@@ -1,9 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import './App.scss';
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import AddNewInventoryItem from "./pages/AddNewInventoryItem/AddNewInventoryItem";
 import InventoryItem from "./pages/InventoryItem/InventoryItem";
-import NewWarehouse from "./pages/NewWarehouse/NewWarehouse";
+import NewWarehouse from "./pages/NewWarehousePage/NewWarehousePage";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           <Route path="/inventory/new" element={<AddNewInventoryItem />} />
         </Routes>
       </main>
-
+      <Footer />
     </BrowserRouter>
   );
 }

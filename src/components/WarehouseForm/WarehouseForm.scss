@@ -6,6 +6,8 @@
   &__heading {
     font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.75rem;
+    margin-bottom: .5rem;
 
     @include tablet {
       font-size: 1.5rem;
@@ -15,7 +17,7 @@
   &__details {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1rem;
     @include edge-padding(mobile);
     padding-top: 1rem;
     padding-bottom: 1.5rem;
@@ -49,8 +51,11 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    @include edge-padding(mobile);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: $background-light-grey;
+    border-radius: 0 0 4px 4px;
 
     @include tablet {
       justify-content: right;

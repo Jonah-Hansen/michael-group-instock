@@ -10,6 +10,7 @@
 body {
   font-family: 'Titillium Web', 'Courier New', monospace;
   color: $primary-instock-black;
+  background-color: $background-light-grey;
 }
 
 button, input, select, textarea {
@@ -18,8 +19,8 @@ button, input, select, textarea {
 }
 
 .page-container {
-  position: absolute;
-  top: 8.5rem;
+  position: relative;
+  top: -4rem;
   margin: 0 1rem;
   width: calc(100% - 2rem);
   max-width: 44rem;
@@ -33,16 +34,14 @@ button, input, select, textarea {
     margin: 0 auto;
   }
 
-  //box shadow that doesnt extend all the way to the top
+  //box shadow that sits behind the page container and main header
   &::before {
     content: '';
     position: absolute;
     z-index: -1;
-    bottom: 0;
-    height: calc(100% - 4rem);
+    height: 100%;
     width: 100%;
     border-radius: 4px;
     box-shadow: 0 0 10px $secondary-cloud;
-
   }
 }

@@ -82,8 +82,8 @@ function WarehouseForm() {
           <h2 className='warehouse-form__heading'>Contact Details</h2>
           <TextInput type='small' label='contact name' name={'cName'} error={error.contact_name} />
           <TextInput type='small' label='position' name={'position'} error={error.contact_position} />
-          <TextInput type='tel' label='phone' name={'phone'} error={error.contact_phone} />
-          <TextInput type='email' label='email' name={'email'} error={error.contact_email} />
+          <TextInput type='tel' label='Phone Number' name={'phone'} error={error.contact_phone} />
+          <TextInput type='email' label='Email' name={'email'} error={error.contact_email} />
         </section>
       </div>
       <div className='warehouse-form__buttons'>

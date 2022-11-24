@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   gap: .5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.25rem;
   @include edge-padding(mobile);
   border-bottom: 1px solid $secondary-cloud;
 
@@ -26,7 +26,6 @@
   }
 
   &__back {
-    padding: 0;
     border: none;
     width: 1.5rem;
     height: 1.5rem;
