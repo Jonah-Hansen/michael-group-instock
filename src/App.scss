@@ -33,16 +33,17 @@ button, input, select, textarea {
 .page-container {
   position: relative;
   top: -4rem;
-  margin: 0 1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: calc(100% - 2rem);
   background-color: $primary-instock-white;
   border-radius: 4px;
 
-  //center it in tablet as it stays max width
   @include tablet {
     top: -6rem;
-    margin: 0 2rem;
     width: calc(100% - 4rem);
+    max-width: 63.5rem;
   }
 
   //box shadow that sits behind the page container and main header

@@ -31,6 +31,10 @@
       margin: 1.5rem 0;
     }
 
+    @include desktop {
+      @include edge-padding(desktop);
+    }
+
     &--first {
       @extend .warehouse-form__details;
       border-bottom: 1px solid $secondary-cloud;
@@ -65,6 +69,10 @@
       justify-content: right;
       @include edge-padding(tablet);
       margin-right: .25rem;
+    }
+
+    @include desktop {
+      @include edge-padding(desktop);
     }
   }
 }

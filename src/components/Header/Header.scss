@@ -12,7 +12,15 @@
   flex-shrink: 0;
 
   @include mixins.tablet {
+    display: flex;
+    justify-content: space-between;
+    @include mixins.edge-padding(tablet);
     height: 11rem;
+  }
+
+  @include mixins.desktop {
+    padding: .75rem 8rem 0;
+    height: 11.75rem;
   }
 
   &__logo {
@@ -21,25 +29,6 @@
     padding-top: 1.5rem;
   }
 
-  @include mixins.tablet {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2rem;
-
-    &__logo {
-      display: block;
-    }
-  }
-
-  @include mixins.desktop {
-    padding: 0;
-
-    &__logo {
-      display: block;
-      width: 70%;
-      margin-left: auto;
-    }
-  }
 }
 
 .nav {
@@ -85,9 +74,5 @@
         height: max-content;
       }
     }
-  }
-
-  @include mixins.desktop {
-    margin-right: auto;
   }
 }

@@ -15,6 +15,10 @@
     padding-bottom: .85rem;
   }
 
+  @include desktop {
+    @include edge-padding(desktop);
+  }
+
   &__heading {
     font-size: 1.75rem;
     text-transform: capitalize;
