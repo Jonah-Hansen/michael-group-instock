@@ -13,12 +13,14 @@ const {
 
 function WarehouseForm() {
   const navigate = useNavigate()
+  //piece of state that holds an object of error messages
   const [error, setError] = useState({})
 
   const handleSubmit = (event) => {
     event.preventDefault()
     //reset error
     setError({})
+
     const { whName, addr, city, country, cName, position, phone, email } = event.target
 
     //build new warehouse object.
@@ -50,10 +52,20 @@ function WarehouseForm() {
       return
     }
     setError({})
-    event.target.reset()
-    console.log('form submitted');
-    // axios.post(`${URL}:${PORT}/warehouse`, newWarehouse)
-    //   .catch(err => console.error(err.response.data))
+    //format phone number
+    newWarehouse.contact_phone = validate.phone(phone.value)
+    //post new warehouse
+    axios.post(`${URL}:${PORT}/warehouse`, newWarehouse)
+      .then(_res => {
+        event.target.reset()
+        alert('new warehouse added successfully :)')
+        navigate('/warehouses')
+      })
+      .catch(err => {
+        err.response ?
+          console.error(err.response.data)
+          : alert('cant connect to server')
+      })
   }
 
   return (
