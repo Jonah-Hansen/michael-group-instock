@@ -14,8 +14,15 @@
   }
 }
 
-// box size reset
-@mixin box-size-reset {
-    margin: 0;
-    padding: 0;
+// edge padding
+@mixin edge-padding($breakpoint) {
+  @if $breakpoint ==mobile {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @else if $breakpoint ==tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }

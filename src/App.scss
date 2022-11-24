@@ -1,6 +1,6 @@
 @use './styles/partials/fonts';
-@use './styles/partials/mixins';
-@use './styles/partials/variables';
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -9,8 +9,40 @@
 
 body {
   font-family: 'Titillium Web', 'Courier New', monospace;
+  color: $primary-instock-black;
 }
 
 button, input, select, textarea {
   font: inherit;
+  text-transform: inherit;
+}
+
+.page-container {
+  position: absolute;
+  top: 8.5rem;
+  margin: 0 1rem;
+  width: calc(100% - 2rem);
+  max-width: 44rem;
+  background-color: $primary-instock-white;
+  border-radius: 4px;
+
+  //center it in tablet as it stays max width
+  @include tablet {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  //box shadow that doesnt extend all the way to the top
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    height: calc(100% - 4rem);
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 10px $secondary-cloud;
+
+  }
 }

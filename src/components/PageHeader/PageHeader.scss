@@ -4,12 +4,25 @@
 .page-header {
   display: flex;
   align-items: center;
-
+  gap: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include edge-padding(mobile);
   border-bottom: 1px solid $secondary-cloud;
+
+  @include tablet {
+    @include edge-padding(tablet);
+    padding-top: 1.5rem;
+  }
 
   &__heading {
     font-size: 1.75rem;
+    text-transform: capitalize;
     font-weight: 600;
+
+    @include tablet {
+      font-size: 2rem;
+    }
   }
 
   &__back {
