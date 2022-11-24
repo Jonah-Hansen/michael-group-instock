@@ -10,6 +10,6 @@ REACT_APP_BACKEND_URL: URL = "http://localhost"
  * Then, call the api as follows: axiosInstance.get('/warehouses')
  */
 export const axiosInstance = axios.create({
-    baseURL: `http://localhost:${PORT}`,
+    baseURL: `${URL}:${PORT}`,
     'Content-Type': 'application/json'
 })
