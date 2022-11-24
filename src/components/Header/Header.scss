@@ -11,6 +11,10 @@
   font-size: .813rem;
   flex-shrink: 0;
 
+  @include mixins.tablet {
+    height: 11rem;
+  }
+
   &__logo {
     display: flex;
     justify-content: center;

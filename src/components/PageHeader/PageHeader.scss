@@ -8,11 +8,11 @@
   padding-top: 1.75rem;
   padding-bottom: 1.25rem;
   @include edge-padding(mobile);
-  border-bottom: 1px solid $secondary-cloud;
 
   @include tablet {
     @include edge-padding(tablet);
-    padding-top: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: .85rem;
   }
 
   &__heading {
