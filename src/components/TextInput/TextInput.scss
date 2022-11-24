@@ -26,6 +26,11 @@
       height: 1.875rem;
     }
 
+
+    &.error {
+      outline: 1px solid $supporting-red;
+    }
+
     &::placeholder {
       color: $secondary-slate;
       font-size: 0.8125rem;
@@ -52,6 +57,20 @@
     &--contact {
       @extend .text-input__input;
       text-transform: none;
+    }
+  }
+
+  &__error {
+    display: flex;
+    gap: .25rem;
+
+    &-icon {
+      width: .75rem;
+    }
+
+    &-text {
+      font-size: .8125rem;
+      color: $supporting-red;
     }
   }
 }
