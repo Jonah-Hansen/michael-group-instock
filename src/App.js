@@ -8,7 +8,7 @@ import NewWarehouse from "./pages/NewWarehousePage/NewWarehousePage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter class='app' >
       <Header />
       <main className="page-container" >
         <Routes >

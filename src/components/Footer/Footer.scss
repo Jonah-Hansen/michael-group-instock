@@ -3,9 +3,12 @@
 @use '../../styles/partials/mixins' as *;
 
 .footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1;
   font-size: 0.6875rem;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
   margin-top: -1.5rem;
 
   @include tablet {

@@ -9,6 +9,7 @@
   font-family: 'Titillium Web', 'Courier New', monospace;
   font-weight: 400;
   font-size: .813rem;
+  flex-shrink: 0;
 
   &__logo {
     display: flex;
