@@ -5,6 +5,7 @@ import NewInventoryItemForm from '../../components/NewInventoryItemForm/NewInven
 import Footer from '../../components/Footer/Footer'
 
 export default function AddNewInventoryItem() {
+  document.title = "In Stock | New Inventory Item"
   return (
       <div className='background'>
         <div className='page'>              

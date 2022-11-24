@@ -26,6 +26,11 @@
       height: 1.875rem;
     }
 
+
+    &.error {
+      outline: 1px solid $supporting-red;
+    }
+
     &::placeholder {
       color: $secondary-slate;
       font-size: 0.8125rem;
@@ -47,6 +52,25 @@
       @extend .text-input__input;
       background: url('../../assets/icons/search-24px.svg') no-repeat right 1rem center;
       padding-right: 2.5rem;
+    }
+
+    &--contact {
+      @extend .text-input__input;
+      text-transform: none;
+    }
+  }
+
+  &__error {
+    display: flex;
+    gap: .25rem;
+
+    &-icon {
+      width: .75rem;
+    }
+
+    &-text {
+      font-size: .8125rem;
+      color: $supporting-red;
     }
   }
 }
