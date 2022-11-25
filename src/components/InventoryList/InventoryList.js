@@ -1,14 +1,14 @@
-import "./InventoryList.scss";
-import InventoryListItem from "../InventoryListItem/InventoryListItem";
 import { useEffect, useState } from 'react';
 import { axiosInstance } from "../../helpers/axiosInstance";
+import InventoryListItem from "../InventoryListItem/InventoryListItem";
+import "./InventoryList.scss";
 
 function InventoryList() {
 
   const [inventoryData, setInventoryData] = useState([])
 
   useEffect(() => {
-    axiosInstance.get(`/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9/inventory`)
+    axiosInstance.get(`/warehouse/5bf7bd6c-2b16-4129-bddc-9d37ff8539e9/inventory`)
       .then((response) => {
         setInventoryData(response.data)
       })
