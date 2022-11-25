@@ -32,7 +32,10 @@ export default function NewInventoryItemForm() {
     }
 
         if (validate.values(newInventoryItem).length !== 0) {
-      const err = {}
+          const err = {}
+          //set error for invalid quantity
+          if (isNaN(newInventoryItem.quantity))
+            err['quantity'] = "Quantity must be a number"
       //set error for keys with missing values
       validate.values(newInventoryItem)
         .forEach(key => err[key] = 'this field is required')
