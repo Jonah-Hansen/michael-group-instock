@@ -3,6 +3,7 @@
 
 .page-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: .5rem;
   padding-top: 2rem;
@@ -19,6 +20,12 @@
     @include edge-padding(desktop);
   }
 
+  &__heading-and-back-container {
+    display: flex;
+    gap: .5rem;
+    flex-grow: 1;
+  }
+
   &__heading {
     font-size: 1.75rem;
     text-transform: capitalize;
@@ -27,6 +34,40 @@
 
     @include tablet {
       font-size: 2rem;
+    }
+  }
+
+  &__edit {
+    display: flex;
+    gap: .25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: $primary-instock-indigo;
+    width: 2.25rem;
+    height: 2.25rem;
+    text-decoration: none;
+
+    @include tablet {
+      width: 5rem;
+      border-radius: 20px;
+
+      &::after {
+        content: 'Edit';
+        color: $primary-instock-white;
+        justify-self: flex-end;
+      }
+    }
+
+    //icon
+    &::before {
+      content: '';
+      width: 1.25rem;
+      height: 1.25rem;
+      background: url('../../assets/icons/edit-24px.svg') no-repeat center;
+      background-size: 100%;
+      filter: grayscale(100) contrast(100) invert(100);
+
     }
   }
 
