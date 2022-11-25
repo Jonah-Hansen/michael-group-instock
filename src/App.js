@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import AddNewInventoryItem from "./pages/AddNewInventoryItem/AddNewInventoryItem";
 import InventoryItem from "./pages/InventoryItem/InventoryItem";
 import NewWarehouse from "./pages/NewWarehouse/NewWarehouse";
+import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route path="/" element={<Navigate to='/warehouses' />} />
           {/* Warehouse Routes */}
           <Route path="/warehouses" />
-          <Route path="/warehouses/:warehouseid" />
+          <Route path="/warehouses/:warehouseid" element={<WarehouseDetailsPage />} />
           <Route path="/warehouses/:warehouseid/edit" />
           <Route path="/warehouses/new" element={<NewWarehouse />} />
 
