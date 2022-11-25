@@ -22,3 +22,17 @@
     border-color: $primary-instock-indigo;
   }
 }
+
+.text-input__error {
+  display: flex;
+  gap: .25rem;
+
+  &-icon {
+    width: .75rem;
+  }
+
+  &-text {
+    font-size: .8125rem;
+    color: $supporting-red;
+  }
+}
