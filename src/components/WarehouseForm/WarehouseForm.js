@@ -1,15 +1,10 @@
-import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { axiosInstance } from '../../helpers/axiosInstance'
 import * as validate from '../../helpers/validation'
 import Button from '../Button/Button'
 import TextInput from '../TextInput/TextInput'
 import './WarehouseForm.scss'
-
-const {
-  REACT_APP_PORT: PORT = "8080",
-  REACT_APP_BACKEND_URL: URL = "http://localhost"
-} = process.env;
 
 function WarehouseForm() {
   const navigate = useNavigate()
@@ -55,7 +50,7 @@ function WarehouseForm() {
     //format phone number
     newWarehouse.contact_phone = validate.phone(phone.value)
     //post new warehouse
-    axios.post(`${URL}:${PORT}/warehouse`, newWarehouse)
+    axiosInstance.post(`/warehouse`, newWarehouse)
       .then(_res => {
         event.target.reset()
         alert('new warehouse added successfully :)')
@@ -82,8 +77,8 @@ function WarehouseForm() {
           <h2 className='warehouse-form__heading'>Contact Details</h2>
           <TextInput type='small' label='contact name' name={'cName'} error={error.contact_name} />
           <TextInput type='small' label='position' name={'position'} error={error.contact_position} />
-          <TextInput type='tel' label='phone' name={'phone'} error={error.contact_phone} />
-          <TextInput type='email' label='email' name={'email'} error={error.contact_email} />
+          <TextInput type='tel' label='Phone Number' name={'phone'} error={error.contact_phone} />
+          <TextInput type='email' label='Email' name={'email'} error={error.contact_email} />
         </section>
       </div>
       <div className='warehouse-form__buttons'>

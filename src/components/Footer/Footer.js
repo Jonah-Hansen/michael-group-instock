@@ -4,7 +4,7 @@ import './Footer.scss'
 export default function Footer() {
   return (
     <footer className='footer'>
-      &copy; InStock Inc. All Rights Reserved.
+      <p>&copy; InStock Inc. All Rights Reserved.</p>
     </footer>
   )
 }
