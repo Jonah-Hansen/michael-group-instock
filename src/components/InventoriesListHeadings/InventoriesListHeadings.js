@@ -1,5 +1,5 @@
 import sortIcon from "../../assets/icons/sort-24px.svg";
-import "./InventoryListHeadings.scss";
+import "./InventoriesListHeadings.scss";
 
 function InventoryListHeadings() {
 
@@ -20,6 +20,10 @@ function InventoryListHeadings() {
       <div className="inv-headings__item">
         <p className="inv-headings__title inv-headings__qtytab">QUANTITY</p>
         <p className="inv-headings__title inv-headings__qty">QTY</p>
+        <img src={sortIcon} alt="arrows up and down representing sort" />
+          </div>
+          <div className="inv-headings__item">
+        <p className="inv-headings__title">WAREHOUSE</p>
         <img src={sortIcon} alt="arrows up and down representing sort" />
       </div>
       <p className="inv-headings__title inv-headings__action">ACTIONS</p>

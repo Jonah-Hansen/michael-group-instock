@@ -13,7 +13,7 @@ function Header() {
         </div>
         <nav className="nav">
           <NavLink to={"/warehouses"} className={"nav__link"}>Warehouses</NavLink>
-          <NavLink to={"/inventory"} className={"nav__link"}>Inventory</NavLink>
+          <NavLink to={"/inventories"} className={"nav__link"}>Inventory</NavLink>
         </nav>
       </header>
     );

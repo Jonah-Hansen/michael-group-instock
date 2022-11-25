@@ -3,8 +3,8 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import WarehouseDetails from '../../components/WarehouseDetails/WarehouseDetails';
 import { axiosInstance } from "../../helpers/axiosInstance";
 
-import InventoryList from '../../components/InventoryList/InventoryList';
-import InventoryListHeadings from "../../components/InventoryListHeadings/InventoryListHeadings";
+import WarehouseInventoryList from '../../components/WarehouseInventoryList/WarehouseInventoryList';
+import WarehouseInventoryListHeadings from "../../components/WarehouseInventoryListHeadings/WarehouseInventoryListHeadings";
 
 function WarehouseDetailsPage() {
 
@@ -33,8 +33,8 @@ function WarehouseDetailsPage() {
         contact_phone={warehouseData.contact_phone}
         contact_email={warehouseData.contact_email}
       />
-      <InventoryListHeadings />
-      <InventoryList />
+      <WarehouseInventoryListHeadings />
+      <WarehouseInventoryList />
 
     </>
   )

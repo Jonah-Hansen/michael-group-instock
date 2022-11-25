@@ -31,7 +31,7 @@ export default function InventoryItemDetail({ item }) {
             </div>
             <div className='item-detail-section-group'>
                 <label className='item-detail-section-group__label'>warehouse</label>
-                <p className='item-detail-section-group__info'>{item.warehouse }</p>
+                <p className='item-detail-section-group__info'>{item.warehouse_name }</p>
             </div>
         </section>
     </div>

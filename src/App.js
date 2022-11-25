@@ -2,8 +2,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import './App.scss';
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import AddNewInventoryItem from "./pages/AddNewInventoryItem/AddNewInventoryItem";
-import InventoryItem from "./pages/InventoryItem/InventoryItem";
+import AddNewInventoryItemPage from "./pages/AddNewInventoryItemPage/AddNewInventoryItemPage";
+import InventoriesListPage from "./pages/InventoriesListPage/InventoriesListPage";
+import InventoryItemPage from "./pages/InventoryItemPage/InventoryItemPage";
 import NewWarehousePage from "./pages/NewWarehousePage/NewWarehousePage";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 
@@ -22,10 +23,10 @@ function App() {
 
 
           {/* Inventory Routes */}
-          <Route path="/inventory" />
-          <Route path="/inventory/:inventoryid" element={<InventoryItem />} />
-          <Route path="/inventory/:inventoryid/edit" />
-          <Route path="/inventory/new" element={<AddNewInventoryItem />} />
+          <Route path="/inventories" element={<InventoriesListPage />} />
+          <Route path="/inventories/:inventoryid" element={<InventoryItemPage />} />
+          <Route path="/inventories/:inventoryid/edit"  />
+          <Route path="/inventories/new" element={<AddNewInventoryItemPage />} />
         </Routes>
       </main>
       <Footer />
