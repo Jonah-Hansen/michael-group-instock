@@ -3,22 +3,22 @@
 @use '../../styles/partials/mixins' as *;
 
 .drop-down-menu {
-    border-color: $secondary-cloud;
-    border-radius: 1.25rem;
-    padding: 0.1rem 0.5rem;
-    color: $secondary-cloud;
+  border-color: $secondary-cloud;
+  border-radius: 1.25rem;
+  padding: 0.1rem 0.5rem;
+  color: $secondary-cloud;
 
-    width: 100%;
-    font-size: 0.8125rem;
+  width: 100%;
+  font-size: 0.8125rem;
 
-    height: 1.75rem;
+  height: 2.25rem;
 
-    @include tablet {
-        height: 1.875rem;
-    }
+  @include tablet {
+    height: 1.875rem;
+  }
 
-    &:focus {
-        color: $primary-instock-black;
-        border-color: $primary-instock-indigo;
-    }
+  &:focus {
+    color: $primary-instock-black;
+    border-color: $primary-instock-indigo;
+  }
 }

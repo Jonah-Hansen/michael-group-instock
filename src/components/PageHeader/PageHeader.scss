@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   gap: .5rem;
-  padding-top: 1.75rem;
-  padding-bottom: 1.25rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
   @include edge-padding(mobile);
 
   @include tablet {
@@ -23,6 +23,7 @@
     font-size: 1.75rem;
     text-transform: capitalize;
     font-weight: 600;
+    line-height: 2.25rem;
 
     @include tablet {
       font-size: 2rem;
@@ -34,5 +35,7 @@
     width: 1.5rem;
     height: 1.5rem;
     background: url('../../assets/icons/arrow_back-24px.svg') no-repeat center;
+    align-self: flex-start;
+    margin-top: .5rem;
   }
 }

@@ -43,15 +43,17 @@
     &--large {
       @extend .text-input__input;
       resize: none;
-      height: 5rem;
+      height: 7.5rem;
       padding-top: .5rem;
       padding-bottom: .5rem;
+      text-transform: none;
     }
 
     &--search {
       @extend .text-input__input;
       background: url('../../assets/icons/search-24px.svg') no-repeat right 1rem center;
       padding-right: 2.5rem;
+      text-transform: none;
     }
 
     &--contact {
