@@ -1,40 +1,37 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Button from "./components/Button/Button";
-import DropDownMenu from "./components/DropDownMenu/DropDownMenu";
-
+import './App.scss';
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import AddNewInventoryItemPage from "./pages/AddNewInventoryItemPage/AddNewInventoryItemPage";
+import InventoriesListPage from "./pages/InventoriesListPage/InventoriesListPage";
+import InventoryItemPage from "./pages/InventoryItemPage/InventoryItemPage";
+import NewWarehousePage from "./pages/NewWarehousePage/NewWarehousePage";
+import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 
 function App() {
-    const items = ['banana', 'strawberry', 'apples']
   return (
-    <div className="App">
-      <DropDownMenu items={items} />
-      <Button text={'+ add item'}/>
-      <Button text={'cancel'} isCancel/>
-      <Button text={'delete'} isDelete/>
-    </div>
+    <BrowserRouter class='app' >
+      <Header />
+      <main className="page-container" >
+        <Routes >
+          <Route path="/" element={<Navigate to='/warehouses' />} />
+          {/* Warehouse Routes */}
+          <Route path="/warehouses" />
+          <Route path="/warehouses/:warehouseid" element={<WarehouseDetailsPage />} />
+          <Route path="/warehouses/:warehouseid/edit" />
+          <Route path="/warehouses/new" element={<NewWarehousePage />} />
+
+
+          {/* Inventory Routes */}
+          <Route path="/inventories" element={<InventoriesListPage />} />
+          <Route path="/inventories/:inventoryid" element={<InventoryItemPage />} />
+          <Route path="/inventories/:inventoryid/edit"  />
+          <Route path="/inventories/new" element={<AddNewInventoryItemPage />} />
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
 export default App;
-
-
-/**
- *  <BrowserRouter>
-        {/* <Header /> */
-        // <Routes>
-        //   <Route className="" path="/" element={<Navigate to='/warehouses' />} />
-
-          {/* Warehouse Routes */}
-          // <Route className="" path="/warehouses" element={<></> } />
-          // <Route className="" path="/warehouses/:warehouseid" element={<></> } />
-          // <Route className="" path="/warehouses/edit" element={<></> } />
-          // <Route className="" path="/warehouses/add" element={ <></>} />
-
-          {/* Inventory Routes */}
-          // <Route className="" path="/inventory" element={ <></>} />
-          // <Route className="" path="/inventory/:inventoryid" element={<></> } />
-          // <Route className="" path="/inventory/edit" element={ <></>} />
-          // <Route className="" path="/inventory/add" element={ <></>} />
-
-      //   </Routes>
-      // </BrowserRouter>

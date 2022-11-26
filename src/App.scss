@@ -1,16 +1,59 @@
-@use '/styles/partials/fonts';
-@use '/styles/partials/mixins';
-@use '/styles/partials/variables';
+@use './styles/partials/fonts';
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
+
+html {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
 
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0; 
-    }
+  box-sizing: border-box;
+  margin: 0;
+}
 
 body {
-    font-family: 'Titillium Web', 'Courier New', monospace;
+  font-family: 'Titillium Web', 'Courier New', monospace;
+  color: $primary-instock-black;
+  background-color: $background-light-grey;
+  height: 100%;
+}
 
-    button, input, select, textarea { 
-        font: inherit;
-    }
+button, input, select, textarea {
+  font: inherit;
+  text-transform: inherit;
+}
+
+.page-container {
+  position: relative;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: calc(100% - 2rem);
+  background-color: $primary-instock-white;
+  border-radius: 4px;
+
+  @include tablet {
+    top: -6rem;
+    width: calc(100% - 4rem);
+    max-width: 63.5rem;
+  }
+
+  //box shadow that sits behind the page container and main header
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 10px $secondary-cloud;
+  }
 }

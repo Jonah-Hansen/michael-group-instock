@@ -1,20 +1,38 @@
-@use '../../../styles/partials/fonts' as *;
-@use '../../../styles/partials/variables' as *;
-@use '../../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
 .drop-down-menu {
-    border-color: $secondary-cloud;
-    border-radius: 1.25rem;
-    padding: 0.1rem 0.25rem;
-    color: $secondary-cloud;
-    height: 1.75rem;
+  border-color: $secondary-cloud;
+  border-radius: 1.25rem;
+  padding: 0.1rem 0.5rem;
+  color: $secondary-cloud;
 
-    @include tablet {
-        height: 1.875rem;
-    }
+  width: 100%;
+  font-size: 0.8125rem;
 
-    &:focus {
-        color: $primary-instock-black;
-        border-color: $primary-instock-indigo;
-    }
+  height: 2.25rem;
+
+  @include tablet {
+    height: 1.875rem;
+  }
+
+  &:focus {
+    color: $primary-instock-black;
+    border-color: $primary-instock-indigo;
+  }
+}
+
+.text-input__error {
+  display: flex;
+  gap: .25rem;
+
+  &-icon {
+    width: .75rem;
+  }
+
+  &-text {
+    font-size: .8125rem;
+    color: $supporting-red;
+  }
 }

@@ -1,0 +1,78 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.text-input {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  text-transform: capitalize;
+
+  &__heading {
+    font-size: .8125rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: .875rem;
+    }
+  }
+
+  &__input {
+    height: 2.25rem;
+    padding: 0 1rem;
+    border-radius: 1.25rem;
+    border: 1px solid $secondary-cloud;
+
+    @include tablet {
+      height: 2.375rem;
+    }
+
+
+    &.error {
+      outline: 1px solid $supporting-red;
+    }
+
+    &::placeholder {
+      color: $secondary-slate;
+      font-size: 0.8125rem;
+    }
+
+    &:focus-visible {
+      outline: 1px solid $primary-instock-indigo;
+    }
+
+    &--large {
+      @extend .text-input__input;
+      resize: none;
+      height: 7.5rem;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+      text-transform: none;
+    }
+
+    &--search {
+      @extend .text-input__input;
+      background: url('../../assets/icons/search-24px.svg') no-repeat right 1rem center;
+      padding-right: 2.5rem;
+      text-transform: none;
+    }
+
+    &--contact {
+      @extend .text-input__input;
+      text-transform: none;
+    }
+  }
+
+  &__error {
+    display: flex;
+    gap: .25rem;
+
+    &-icon {
+      width: .75rem;
+    }
+
+    &-text {
+      font-size: .8125rem;
+      color: $supporting-red;
+    }
+  }
+}

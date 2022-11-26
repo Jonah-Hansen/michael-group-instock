@@ -1,0 +1,78 @@
+@use '../../styles/partials/fonts';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/variables';
+
+
+.header {
+  background: variables.$background-graphite;
+  height: 12.5rem;
+  font-family: 'Titillium Web', 'Courier New', monospace;
+  font-weight: 400;
+  font-size: .813rem;
+  flex-shrink: 0;
+
+  @include mixins.tablet {
+    display: flex;
+    justify-content: space-between;
+    @include mixins.edge-padding(tablet);
+    height: 11rem;
+  }
+
+  @include mixins.desktop {
+    padding: .75rem 8rem 0;
+    height: 11.75rem;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+  }
+
+}
+
+.nav {
+  padding-top: 1.25rem;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: center;
+
+  &__link {
+    text-decoration: none;
+    color: variables.$secondary-cloud;
+    margin-right: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 1rem;
+
+    &.active {
+      color: white;
+      background-color: variables.$primary-instock-black;
+      border-radius: 1.25rem;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+  @include mixins.tablet {
+    padding-left: 0;
+
+    &__link {
+      margin-left: 1rem;
+      margin-right: 0;
+      height: max-content;
+
+      &.active {
+        margin-left: 1rem;
+        margin-right: 0;
+        height: max-content;
+      }
+    }
+  }
+}

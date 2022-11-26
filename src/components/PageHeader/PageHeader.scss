@@ -1,0 +1,82 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  @include edge-padding(mobile);
+
+  @include tablet {
+    @include edge-padding(tablet);
+    padding-top: 2rem;
+    padding-bottom: .85rem;
+  }
+
+  @include desktop {
+    @include edge-padding(desktop);
+  }
+
+  &__heading-and-back-container {
+    display: flex;
+    gap: .5rem;
+    flex-grow: 1;
+  }
+
+  &__heading {
+    font-size: 1.75rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    line-height: 2.25rem;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+
+  &__edit {
+    display: flex;
+    gap: .25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: $primary-instock-indigo;
+    width: 2.25rem;
+    height: 2.25rem;
+    text-decoration: none;
+
+    @include tablet {
+      width: 5rem;
+      border-radius: 20px;
+
+      &::after {
+        content: 'Edit';
+        color: $primary-instock-white;
+        justify-self: flex-end;
+      }
+    }
+
+    //icon
+    &::before {
+      content: '';
+      width: 1.25rem;
+      height: 1.25rem;
+      background: url('../../assets/icons/edit-24px.svg') no-repeat center;
+      background-size: 100%;
+      filter: grayscale(100) contrast(100) invert(100);
+
+    }
+  }
+
+  &__back {
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url('../../assets/icons/arrow_back-24px.svg') no-repeat center;
+    align-self: flex-start;
+    margin-top: .5rem;
+  }
+}

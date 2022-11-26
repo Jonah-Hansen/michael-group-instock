@@ -1,0 +1,75 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.item-detail {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+    &-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+
+        @include tablet {
+            &:first-child {
+            border-right: 1px solid $secondary-cloud;
+        }
+        }
+
+        &-group {
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.25rem;
+
+            &__label {
+                text-transform: uppercase;
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+                color: $secondary-slate;
+                font-size: 0.8125rem;
+                font-weight: 600;
+            }
+
+            &__info {
+                font-size: 0.6875rem;
+                line-height: 1rem;
+                font-weight: 400;
+                color: $background-graphite;
+
+                @include tablet {
+                    font-size: 0.75rem;
+                    line-height: 1.125rem;
+                }
+
+                &--in-stock  {
+                    background-color: rgb(184, 218, 208);
+                    border-radius: 50rem;
+                    padding: 0 0.5rem;
+                    color: green;
+                }
+
+                &--out-of-stock {
+                    background-color: rgb(251, 242, 238);
+                    color: red;
+                    border-radius: 50rem;
+                    padding: 0 0.5rem;
+                }
+            }
+        }
+
+        &-double-group {
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+        }
+    }
+}
