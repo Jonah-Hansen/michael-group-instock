@@ -1,75 +1,75 @@
 @use "../../styles/partials/variables" as *;
 
 .inv-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid $secondary-cloud;
+  padding: 1rem;
+
+  &__cat {
+    width: 10%;
+    font-size: .815rem;
+  }
+
+  &__stock {}
+
+  &__in-stock {
+    text-transform: uppercase;
+    background-color: rgb(184, 218, 208);
+    border-radius: 50rem;
+    padding: 0 0.5rem;
+    color: $supporting-green;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.815rem;
+  }
+
+  &__out-stock {
+    text-transform: uppercase;
+    background-color: rgb(251, 242, 238);
+    color: $supporting-red;
+    border-radius: 50rem;
+    padding: 0 0.7rem;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.815rem;
+  }
+
+  &__quantity {
+    width: 5%;
+    font-size: 0.815rem;
+  }
+
+  &__actions {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 1px solid $secondary-cloud;
-    padding: 1rem;
 
-    &__cat {
-        width: 10%;
-        font-size: .815rem;
+    &-delete {
+      width: 1.5rem;
+      margin-right: 1rem;
     }
 
-    &__stock {
-        
+    &-edit {
+      width: 1.5rem;
+      margin-right: 1rem;
     }
-
-    &__in-stock {
-        text-transform: uppercase;
-        background-color: rgb(184, 218, 208);
-        border-radius: 50rem;
-        padding: 0 0.5rem;
-        color: $supporting-green;
-        white-space: nowrap;
-        font-weight: 600;
-        font-size: 0.815rem;
-    }
-
-    &__out-stock {
-        text-transform: uppercase;
-        background-color: rgb(251, 242, 238);
-        color: $supporting-red;
-        border-radius: 50rem;
-        padding: 0 0.7rem;
-        white-space: nowrap;
-        font-weight: 600;
-        font-size: 0.815rem;
-    }
-
-    &__quantity {
-        width: 5%;
-        font-size: 0.815rem;
-    }
-
-    &__actions {
-        display: flex;
-        flex-direction: row;
-    
-        &-delete {
-            margin-right: 1rem;
-        }
-
-        &-edit {
-            margin-right: 1rem;
-        }
-    }
+  }
 }
 
 .inv-row__inv {
-    display: flex;
-    flex-direction: row;
-    width: 6rem;
+  display: flex;
+  flex-direction: row;
+  width: 6rem;
 
-    &-item {
-        display: flex;
-        min-width: min-content;
-        white-space: nowrap;
-        align-items: center;
-        color: $primary-instock-indigo;
-        font-size: .815rem;
-        cursor: pointer;
-    }
+  &-item {
+    display: flex;
+    min-width: min-content;
+    white-space: nowrap;
+    align-items: center;
+    color: $primary-instock-indigo;
+    font-size: .815rem;
+    cursor: pointer;
+  }
 
 }

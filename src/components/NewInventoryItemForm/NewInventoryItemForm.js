@@ -48,7 +48,7 @@ export default function NewInventoryItemForm() {
       .then(_res => {
         event.target.reset()
         alert('new inventory item added successfully :)')
-        navigate('/inventory')
+        navigate('/inventories')
       })
       .catch(err => {
         err.response ?
