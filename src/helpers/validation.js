@@ -1,4 +1,4 @@
-import { validate } from "email-validator"
+import { validate } from "email-validator";
 
 //returns the list of keys with empty values.
 export function values(formObject) {
@@ -9,6 +9,8 @@ export function values(formObject) {
 //returns phone number in format +1 (646) 123-1234
 //or false if there are missing numbers
 export function phone(string) {
+  //check that number does not begin with +(num). if so, remove.
+  if (string[0] === '+') string = string.slice(2)
   //remove non numbers from from string
   const s = string.split('').filter(char => char !== ' ' && !isNaN(char))
   //return false is not enough numbers
