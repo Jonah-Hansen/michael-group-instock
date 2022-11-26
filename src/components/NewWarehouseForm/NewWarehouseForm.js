@@ -4,9 +4,9 @@ import { axiosInstance } from '../../helpers/axiosInstance'
 import * as validate from '../../helpers/validation'
 import Button from '../Button/Button'
 import TextInput from '../TextInput/TextInput'
-import './WarehouseForm.scss'
+import './NewWarehouseForm.scss'
 
-function WarehouseForm() {
+function NewWarehouseForm() {
   const navigate = useNavigate()
   //piece of state that holds an object of error messages
   const [error, setError] = useState({})
@@ -89,4 +89,4 @@ function WarehouseForm() {
   )
 }
 
-export default WarehouseForm
+export default NewWarehouseForm

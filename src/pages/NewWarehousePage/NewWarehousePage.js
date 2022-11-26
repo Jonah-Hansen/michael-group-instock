@@ -1,14 +1,14 @@
+import NewWarehouseForm from '../../components/NewWarehouseForm/NewWarehouseForm'
 import PageHeader from '../../components/PageHeader/PageHeader'
-import WarehouseForm from '../../components/WarehouseForm/WarehouseForm'
 
-function NewWarehouse() {
+function NewWarehousePage() {
   document.title = "In Stock | New Warehouse"
   return (
     <>
       <PageHeader text='Add New Warehouse' />
-      <WarehouseForm />
+      <NewWarehouseForm />
     </>
   )
 }
 
-export default NewWarehouse
+export default NewWarehousePage
