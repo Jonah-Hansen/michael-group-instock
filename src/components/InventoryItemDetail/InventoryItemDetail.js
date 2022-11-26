@@ -20,7 +20,7 @@ export default function InventoryItemDetail({ item }) {
             <div className='item-detail-section-group'>
                 <label className='item-detail-section-group__label'>status</label>
                         <p className={`item-detail-section-group__info
-                        ${item.status === 'IN STOCK' ?
+                        ${item.quantity ?
                                 'item-detail-section-group__info--in-stock'
                                 : 'item-detail-section-group__info--out-of-stock'}`}>{item.status}</p>
             </div>

@@ -55,6 +55,7 @@
                     border-radius: 50rem;
                     padding: 0 0.5rem;
                     color: green;
+                    text-transform: uppercase;
                 }
 
                 &--out-of-stock {
@@ -62,6 +63,7 @@
                     color: red;
                     border-radius: 50rem;
                     padding: 0 0.5rem;
+                    text-transform: uppercase;
                 }
             }
         }
