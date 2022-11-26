@@ -6,6 +6,7 @@ import AddNewInventoryItemPage from "./pages/AddNewInventoryItemPage/AddNewInven
 import InventoriesListPage from "./pages/InventoriesListPage/InventoriesListPage";
 import InventoryItemPage from "./pages/InventoryItemPage/InventoryItemPage";
 import NewWarehousePage from "./pages/NewWarehousePage/NewWarehousePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
           <Route path="/inventories/:inventoryid" element={<InventoryItemPage />} />
           <Route path="/inventories/:inventoryid/edit"  />
           <Route path="/inventories/new" element={<AddNewInventoryItemPage />} />
+
+          {/* Page Not Found */}
+          <Route path="*" element={<NotFoundPage /> } />
         </Routes>
       </main>
       <Footer />
