@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import InventoryListHeadings from '../../components/InventoriesListHeadings/InventoriesListHeadings';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import PageHeader from "../../components/PageHeader/PageHeader";
@@ -10,6 +11,8 @@ export default function InventoriesListPage() {
   const [allInventory, setAllInventory] = useState(null)
   //piece of state for inventory to show
   const [inventoryData, setInventoryData] = useState([])
+
+  const [urlParams, setUrlParams] = useSearchParams()
   //piece of state for search
   const [searchValue, setSearchValue] = useState('')
   //object to hold searchState
@@ -19,14 +22,14 @@ export default function InventoriesListPage() {
   }
 
   useEffect(() => {
+    searchValue ? setUrlParams({ search: searchValue }) : setUrlParams()
     allInventory &&
       setInventoryData(allInventory.filter(item => (
         item.item_name?.toLowerCase().includes(searchValue.toLowerCase()) ||
         item.category?.toLowerCase().includes(searchValue.toLowerCase()) ||
         item.warehouse_name?.toLowerCase().includes(searchValue.toLowerCase())
       )));
-
-  }, [searchValue, allInventory])
+  }, [searchValue, allInventory, setUrlParams])
 
   const [itemOrdered, setItemOrdered] = useState(false)
   const [categoryOrdered, setCategoryOrdered] = useState(false)
