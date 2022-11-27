@@ -6,26 +6,33 @@
   &__heading {
     font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.75rem;
+    margin-bottom: .5rem;
 
     @include tablet {
       font-size: 1.5rem;
+      margin-bottom: .75rem;
     }
   }
 
   &__details {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1rem;
     @include edge-padding(mobile);
     padding-top: 1rem;
     padding-bottom: 1.5rem;
 
 
     @include tablet {
-      gap: 1rem;
+      gap: 1.5rem;
       flex-grow: 1;
       padding: 0 2rem .5rem;
       margin: 1.5rem 0;
+    }
+
+    @include desktop {
+      @include edge-padding(desktop);
     }
 
     &--first {
@@ -34,12 +41,15 @@
 
       @include tablet {
         border-bottom: none;
-        border-right: 1px solid $secondary-cloud;
+        border-right: 2px solid $secondary-cloud;
       }
     }
 
     &-container {
+      border-top: 1px solid $secondary-cloud;
+
       @include tablet {
+        border-width: 2px;
         display: flex;
       }
     }
@@ -49,11 +59,20 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    @include edge-padding(mobile);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: $background-light-grey;
+    border-radius: 0 0 4px 4px;
 
     @include tablet {
       justify-content: right;
+      @include edge-padding(tablet);
+      margin-right: .25rem;
+    }
+
+    @include desktop {
+      @include edge-padding(desktop);
     }
   }
 }

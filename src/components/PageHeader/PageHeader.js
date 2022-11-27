@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import edit from '../../assets/icons/edit-24px.svg';
+import { Link, useNavigate } from 'react-router-dom';
+import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import './PageHeader.scss';
 
@@ -13,15 +13,15 @@ function PageHeader({ type, text }) {
   switch (type) {
     case 'details':
       actions =
-        <button><img src={edit} alt='edit' /></button>
+        <Link to={'./edit'} className='page-header__edit' />
       break;
     case 'list':
       back = false;
       actions =
-        <div>
+        <>
           <TextInput type='search' />
-          <button>placeholder button</button>
-        </div>
+          <Button text={`+ add a new ${text.includes('ventory') ? 'item' : 'warehouse'}`} onClick={() => navigate('./new')} />
+        </>
       break;
     default:
       break
@@ -29,10 +29,12 @@ function PageHeader({ type, text }) {
 
   return (
     <header className='page-header'>
-      {back &&
-        <button className='page-header__back' onClick={() => navigate(-1)} />
-      }
-      <h1 className='page-header__heading'>{text}</h1>
+      <div className='page-header__heading-and-back-container'>
+        {back &&
+          <button className='page-header__back' onClick={() => navigate(-1)} />
+        }
+        <h1 className='page-header__heading'>{text}</h1>
+      </div>
       {actions}
     </header>
   )
