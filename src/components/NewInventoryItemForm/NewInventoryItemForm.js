@@ -27,7 +27,7 @@ export default function NewInventoryItemForm() {
       item_name: name.value,
       description: description.value,
       status: status.value,
-      quantity: quantity.value,
+      quantity: quantity?.value || '0',
       category: category.value,
       warehouse_id: await getWarehouseId(warehouse.value),
     }
