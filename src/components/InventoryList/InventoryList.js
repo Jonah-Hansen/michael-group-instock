@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { axiosInstance } from "../../helpers/axiosInstance";
 import InventoryListItem from "../InventoryListItem/InventoryListItem";
+import InventoryListItemMobile from '../InventoryListItemMobile/InventoryListItemMobile';
 import "./InventoryList.scss";
 
 function InventoryList({itemOrdered, categoryOrdered, statusOrdered, quantityOrdered, warehouseOrdered}) {
@@ -32,12 +33,20 @@ function InventoryList({itemOrdered, categoryOrdered, statusOrdered, quantityOrd
     }, [warehouseOrdered])
 
   return (
-    <section className="warehouse-list">
-      {inventoryData?.map((item, index) => <InventoryListItem
-          key={index}
-          item={ item}
-      />)}
-    </section>
+    <>
+      <section className="non-mobile-list">
+        {inventoryData?.map((item, index) => <InventoryListItem
+            key={index}
+            item={ item}
+            />)}
+      </section>
+      <section className="mobile-list">
+        {inventoryData?.map((item, index) => <InventoryListItemMobile
+            key={index}
+            item={ item}
+            />)}
+      </section>
+    </>
     )
 
     async function populateData() {
