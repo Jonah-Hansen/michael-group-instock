@@ -8,28 +8,28 @@ import './InventoriesListPage.scss';
 
 export default function InventoriesListPage() {
   //piece of state for all inventory
-  const [allInventory, setAllInventory] = useState(null)
+  const [allInventory, setAllInventory] = useState([])
   //piece of state for inventory to show
   const [inventoryData, setInventoryData] = useState([])
 
-  const [urlParams, setUrlParams] = useSearchParams()
-  //piece of state for search
-  const [searchValue, setSearchValue] = useState('')
-  //object to hold searchState
-  const searchState = {
-    searchValue,
-    setSearchValue
+  const [searchParams, setSearchParams] = useSearchParams()
+  //object to hold searchParams to make passing as props easier
+  const searchParam = {
+    searchValue: searchParams.get('search') || '',
+    setSearchParams
   }
 
   useEffect(() => {
-    searchValue ? setUrlParams({ search: searchValue }) : setUrlParams()
-    allInventory &&
-      setInventoryData(allInventory.filter(item => (
-        item.item_name?.toLowerCase().includes(searchValue.toLowerCase()) ||
-        item.category?.toLowerCase().includes(searchValue.toLowerCase()) ||
-        item.warehouse_name?.toLowerCase().includes(searchValue.toLowerCase())
-      )));
-  }, [searchValue, allInventory, setUrlParams])
+    //clear search params if search bar is ''
+    !searchParam.searchValue && setSearchParams()
+    //if all inventory is loaded, filter it to only the items that match the search.
+    // allInventory &&
+    setInventoryData(allInventory.filter(item => (
+      item.item_name?.toLowerCase().includes(searchParam.searchValue) ||
+      item.category?.toLowerCase().includes(searchParam.searchValue) ||
+      item.warehouse_name?.toLowerCase().includes(searchParam.searchValue)
+    )));
+  }, [searchParam.searchValue, allInventory, setSearchParams])
 
   const [itemOrdered, setItemOrdered] = useState(false)
   const [categoryOrdered, setCategoryOrdered] = useState(false)
@@ -43,7 +43,7 @@ export default function InventoriesListPage() {
 
   return (
     <>
-      <PageHeader type={'list'} text={'Inventory'} searchState={searchState} />
+      <PageHeader type={'list'} text={'Inventory'} searchParam={searchParam} />
       <InventoryListHeadings
         setItemOrdered={setItemOrdered}
         setCategoryOrdered={setCategoryOrdered}
