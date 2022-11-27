@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './RadioButton.scss'
 
 export default function RadioButton({ text, name, checked, value }) {
-  const [isChecked, setIsChecked] = useState(checked)
+  const [isChecked, setIsChecked] = useState(checked || false)
   return (
     <div className='radio-button'>
       <input type="radio" name={name} value={value} className="radio-button__input" checked={isChecked} onChange={ () => setIsChecked(prev => !prev)} />

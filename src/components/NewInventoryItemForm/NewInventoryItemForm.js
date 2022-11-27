@@ -31,17 +31,20 @@ export default function NewInventoryItemForm() {
       warehouse_id: await getWarehouseId(warehouse.value),
     }
 
-    if (validate.values(newInventoryItem).length !== 0) {
-      const err = {}
+    const err = {}
       //set error for invalid quantity
-      if (isNaN(newInventoryItem.quantity) || newInventoryItem.quantity < 0)
+      if (isNaN(newInventoryItem.quantity) || parseInt(newInventoryItem.quantity) < 0)
         err['quantity'] = "Quantity must be a non-negative number"
+      if (parseInt(newInventoryItem.quantity) > 0 && newInventoryItem.status === "Out Of Stock")
+        err['quantity'] = "Status does not match quantity in stock"
+      if (parseInt(newInventoryItem.quantity) === 0 && newInventoryItem.status === "In Stock")
+        err['quantity'] = "Status does not match quantity in stock"
       //set error for keys with missing values
       validate.values(newInventoryItem)
         .forEach(key => err[key] = 'this field is required')
       setError(err)
-      return
-    }
+      if(validate.values(newInventoryItem).length !== 0 || err['quantity']) return 
+
     setError({})
 
     axiosInstance.post('/inventory', newInventoryItem)
