@@ -2,7 +2,7 @@ import React from 'react'
 import PageHeader from '../../components/PageHeader/PageHeader'
 import './InventoryItem.scss'
 import Footer from '../../components/Footer/Footer'
-import InventoryItemDetail from '../../components/Header/InventoryItemDetail/InventoryItemDetail'
+import InventoryItemDetail from '../../components/InventoryItemDetail/InventoryItemDetail'
 
 export default function InventoryItem() {
     const item = {
