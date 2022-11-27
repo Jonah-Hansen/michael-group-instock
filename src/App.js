@@ -3,6 +3,7 @@ import './App.scss';
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import AddNewInventoryItemPage from "./pages/AddNewInventoryItemPage/AddNewInventoryItemPage";
+import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 import InventoriesListPage from "./pages/InventoriesListPage/InventoriesListPage";
 import InventoryItemPage from "./pages/InventoryItemPage/InventoryItemPage";
@@ -27,7 +28,7 @@ function App() {
           {/* Inventory Routes */}
           <Route path="/inventories" element={<InventoriesListPage />} />
           <Route path="/inventories/:inventoryid" element={<InventoryItemPage />} />
-          <Route path="/inventories/:inventoryid/edit" />
+          <Route path="/inventories/:inventoryid/edit" element={<EditInventoryPage />} />
           <Route path="/inventories/new" element={<AddNewInventoryItemPage />} />
 
           {/* Page Not Found */}

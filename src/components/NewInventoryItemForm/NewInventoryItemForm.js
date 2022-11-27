@@ -34,8 +34,8 @@ export default function NewInventoryItemForm() {
     if (validate.values(newInventoryItem).length !== 0) {
       const err = {}
       //set error for invalid quantity
-      if (isNaN(newInventoryItem.quantity))
-        err['quantity'] = "Quantity must be a number"
+      if (isNaN(newInventoryItem.quantity) || newInventoryItem.quantity < 0)
+        err['quantity'] = "Quantity must be a non-negative number"
       //set error for keys with missing values
       validate.values(newInventoryItem)
         .forEach(key => err[key] = 'this field is required')
@@ -110,7 +110,6 @@ export default function NewInventoryItemForm() {
 
   async function getWarehouseId(name) {
     const response = await axiosInstance(`warehouse/getId/${name}`)
-    console.log(response.data)
     return response.data
   }
 }

@@ -22,7 +22,7 @@ const navigate = useNavigate()
             <p className="inv-row__quantity">{item.warehouse_name}</p>
             <div className="inv-row__actions">
                 <img className="inv-row__actions-delete" src={deleteIcon} alt="red garbage can delete" />
-                <img className="inv-row__actions-edit" src={editIcon} alt="blue pen representing edit" />
+                <img className="inv-row__actions-edit" src={editIcon} alt="blue pen representing edit" onClick={() => navigate(`/inventories/${item.id}/edit`)}/>
             </div>
         </div>
     )
