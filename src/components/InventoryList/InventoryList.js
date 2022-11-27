@@ -3,63 +3,48 @@ import { axiosInstance } from "../../helpers/axiosInstance";
 import InventoryListItem from "../InventoryListItem/InventoryListItem";
 import "./InventoryList.scss";
 
-function InventoryList({itemOrdered, categoryOrdered, statusOrdered, quantityOrdered, warehouseOrdered}) {
-
-  const [inventoryData, setInventoryData] = useState([])
-
-  useEffect(() => {
-    populateData()
-  }, []);
+function InventoryList({ itemOrdered, categoryOrdered, statusOrdered, quantityOrdered, warehouseOrdered, inventoryData, setInventoryData }) {
 
   useEffect(() => {
     sortByItem()
   }, [itemOrdered])
-  
-    useEffect(() => {
+
+  useEffect(() => {
     sortByCategory()
-    }, [categoryOrdered])
-  
-    useEffect(() => {
+  }, [categoryOrdered])
+
+  useEffect(() => {
     sortByQuantity()
-    }, [quantityOrdered])
-  
-   useEffect(() => {
+  }, [quantityOrdered])
+
+  useEffect(() => {
     sortByStatus()
-    }, [statusOrdered])
-  
-    useEffect(() => {
+  }, [statusOrdered])
+
+  useEffect(() => {
     sortByWarehouse()
-    }, [warehouseOrdered])
+  }, [warehouseOrdered])
 
   return (
     <section className="warehouse-list">
       {inventoryData?.map((item, index) => <InventoryListItem
-          key={index}
-          item={ item}
+        key={index}
+        item={item}
       />)}
     </section>
-    )
+  )
 
-    async function populateData() {
-        try {
-            const response = await axiosInstance.get('/inventory/joinWarehouse/name')
-            setInventoryData(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-  }
-  
   async function sortByItem() {
     let response;
     try {
       if (itemOrdered) response = await axiosInstance.get('/inventory/sortByItemASC')
       else response = await axiosInstance.get('/inventory/sortByItemDESC')
       setInventoryData(response.data)
-      } catch (error) {
-    console.log(error)
+    } catch (error) {
+      console.log(error)
     }
   }
-  
+
   async function sortByCategory() {
     let response;
     try {
@@ -67,7 +52,7 @@ function InventoryList({itemOrdered, categoryOrdered, statusOrdered, quantityOrd
       else response = await axiosInstance.get('/inventory/sortByCategoryDESC')
       setInventoryData(response.data)
     } catch (error) {
-    console.log(error)
+      console.log(error)
     }
   }
 
@@ -78,7 +63,7 @@ function InventoryList({itemOrdered, categoryOrdered, statusOrdered, quantityOrd
       else response = await axiosInstance.get('/inventory/sortByStatusDESC')
       setInventoryData(response.data)
     } catch (error) {
-    console.log(error)
+      console.log(error)
     }
   }
 
@@ -89,7 +74,7 @@ function InventoryList({itemOrdered, categoryOrdered, statusOrdered, quantityOrd
       else response = await axiosInstance.get('/inventory/sortByQuantityDESC')
       setInventoryData(response.data)
     } catch (error) {
-    console.log(error)
+      console.log(error)
     }
   }
 
@@ -103,7 +88,7 @@ function InventoryList({itemOrdered, categoryOrdered, statusOrdered, quantityOrd
       console.log(error)
     }
   }
-  
+
 }
 
 export default InventoryList;

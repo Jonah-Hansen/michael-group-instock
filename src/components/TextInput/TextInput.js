@@ -5,7 +5,7 @@ import './TextInput.scss';
 // text input component requires a type. all other props are optional.
 // if no placeholder provided, placeholder will use label. 
 // additional className can be applied to overwrite parent label style. use to set width as needed. 
-function TextInput({ type, label, placeholder, name, value, className, error }) {
+function TextInput({ type, label, placeholder, name, value, className, error, searchState }) {
   const ref = useRef(null)
 
   //render different input element depending on type
@@ -23,7 +23,7 @@ function TextInput({ type, label, placeholder, name, value, className, error }) 
 
     case 'search':
       input =
-        <input type={type} className='text-input__input--search' placeholder='Search...' name={name} ref={ref} />
+        <input type={type} className='text-input__input--search' placeholder='Search...' name={name} ref={ref} onChange={(e) => searchState.setSearchValue(e.target.value)} value={searchState.searchValue} />
       break;
 
     case 'tel':

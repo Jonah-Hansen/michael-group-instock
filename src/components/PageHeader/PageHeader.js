@@ -5,7 +5,7 @@ import './PageHeader.scss';
 
 //page header takes a type of details or list, and text for the heading.
 //default style has only back button and heading
-function PageHeader({ type, text }) {
+function PageHeader({ type, text, searchState }) {
   const navigate = useNavigate()
 
   let back = true; //back button is present by default
@@ -19,7 +19,7 @@ function PageHeader({ type, text }) {
       back = false;
       actions =
         <>
-          <TextInput type='search' />
+          <TextInput type='search' searchState={searchState} />
           <Button text={`+ add a new ${text.includes('ventory') ? 'item' : 'warehouse'}`} onClick={() => navigate('./new')} />
         </>
       break;
