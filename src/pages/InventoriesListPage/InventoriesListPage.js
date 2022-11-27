@@ -13,20 +13,27 @@ export default function InventoriesListPage() {
   return (
     <>
       <PageHeader type={'list'} text={'Inventory'} />
-      <InventoryListHeadings
-        setItemOrdered={setItemOrdered}
-        setCategoryOrdered={setCategoryOrdered}
-        setStatusOrdered={setStatusOrdered}
-        setQuantityOrdered={setQuantityOrdered}
-        setWarehouseOrdered={setWarehouseOrdered}
-      />
-      <InventoryList
-        itemOrdered={itemOrdered}
-        categoryOrdered={categoryOrdered}
-        statusOrdered={statusOrdered}
-        quantityOrdered={quantityOrdered}
-        warehouseOrdered={warehouseOrdered}
-      />
+      <div className='mobile'>
+          <InventoryList />
+      </div>
+
+      <div className='non-mobile'>
+        <InventoryListHeadings
+                setItemOrdered={setItemOrdered}
+                setCategoryOrdered={setCategoryOrdered}
+                setStatusOrdered={setStatusOrdered}
+                setQuantityOrdered={setQuantityOrdered}
+                setWarehouseOrdered={setWarehouseOrdered}
+              />
+        <InventoryList
+          itemOrdered={itemOrdered}
+          categoryOrdered={categoryOrdered}
+          statusOrdered={statusOrdered}
+          quantityOrdered={quantityOrdered}
+          warehouseOrdered={warehouseOrdered}
+        />
+      </div>
+      
     </>
   )
 }

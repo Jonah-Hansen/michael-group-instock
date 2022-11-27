@@ -11,6 +11,7 @@ import './NewInventoryItemForm.scss'
 export default function NewInventoryItemForm() {
   const [categories, setCategories] = useState([])
   const [warehouses, setWarehouses] = useState([])
+  const [quantityShowsUp, setQuantityShowsUp] = useState(true)
   const navigate = useNavigate()
   //piece of state that holds an object of error messages
   const [error, setError] = useState({})
@@ -31,17 +32,20 @@ export default function NewInventoryItemForm() {
       warehouse_id: await getWarehouseId(warehouse.value),
     }
 
-    if (validate.values(newInventoryItem).length !== 0) {
-      const err = {}
+    const err = {}
       //set error for invalid quantity
-      if (isNaN(newInventoryItem.quantity) || newInventoryItem.quantity < 0)
+      if (isNaN(newInventoryItem.quantity) || parseInt(newInventoryItem.quantity) < 0)
         err['quantity'] = "Quantity must be a non-negative number"
+      if (parseInt(newInventoryItem.quantity) > 0 && newInventoryItem.status === "Out Of Stock")
+        err['quantity'] = "Status does not match quantity in stock"
+      if (parseInt(newInventoryItem.quantity) === 0 && newInventoryItem.status === "In Stock")
+        err['quantity'] = "Status does not match quantity in stock"
       //set error for keys with missing values
       validate.values(newInventoryItem)
         .forEach(key => err[key] = 'this field is required')
       setError(err)
-      return
-    }
+      if(validate.values(newInventoryItem).length !== 0 || err['quantity']) return 
+
     setError({})
 
     axiosInstance.post('/inventory', newInventoryItem)
@@ -78,11 +82,11 @@ export default function NewInventoryItemForm() {
           <div className='new-inventory-form-group'>
             <label className='new-inventory-form-section__label'>Status</label>
             <div className='new-inventory-form-section__radio-buttons'>
-              <RadioButton text='In stock' name='status' checked />
-              <RadioButton text="Out of stock" status='status' name='status' />
+              <RadioButton text='In stock' name='status' value='In Stock' setQuantityShowsUp={ setQuantityShowsUp} />
+              <RadioButton text="Out of stock" status='status' value='Out Of Stock' name='status' setQuantityShowsUp={ setQuantityShowsUp}/>
             </div>
           </div>
-          <TextInput type="small" label="Quantity" placeholder="0" name='quantity' error={error.quantity} />
+          {quantityShowsUp && <TextInput type="small" label="Quantity" placeholder="0" name='quantity' error={error.quantity} className={`${''}`} />}
           <div className='new-inventory-form-group'>
             <label className='new-inventory-form-section__label'>Warehouse</label>
             <DropDownMenu items={warehouses} name='warehouse' error={error.warehouse_id} />
