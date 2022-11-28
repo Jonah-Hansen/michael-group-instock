@@ -1,0 +1,13 @@
+@use '../../styles/partials/mixins' as *;
+.mobile {
+    @include tablet {
+        display: none;
+    }
+}
+
+.non-mobile {
+    display: none;
+    @include tablet {
+        display: block;
+    }
+}
