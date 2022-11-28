@@ -1,6 +1,6 @@
 import WarehousesListItem from "../WarehousesListItem/WarehousesListItem";
 import "./WarehousesList.scss";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { axiosInstance } from "../../helpers/axiosInstance";
 
 function WarehousesList({ handleClick, warehouseOrdered, addressOrdered, contactNameOrdered, contactInfoOrdered, warehousesData, setWarehousesData }) {
@@ -8,18 +8,22 @@ function WarehousesList({ handleClick, warehouseOrdered, addressOrdered, contact
   
   useEffect(() => {
     sortByWarehouse()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [warehouseOrdered])
 
     useEffect(() => {
     sortByAddress()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [addressOrdered])
   
     useEffect(() => {
     sortByContactName()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [contactNameOrdered])
   
     useEffect(() => {
     sortByContactInfo()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contactInfoOrdered])
 
   return (
