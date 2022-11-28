@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
-import { axiosInstance } from "../../helpers/axiosInstance";
 import WarehousesListItem from "../WarehousesListItem/WarehousesListItem";
 import "./WarehousesList.scss";
+
 
 function WarehousesList({ warehouseOrdered, addressOrdered, contactNameOrdered, contactInfoOrdered }) {
 
@@ -16,6 +15,7 @@ function WarehousesList({ warehouseOrdered, addressOrdered, contactNameOrdered, 
         console.log(error)
       });
   }, []);
+function WarehousesList({warehousesData}) {
 
   useEffect(() => {
     sortByWarehouse()
