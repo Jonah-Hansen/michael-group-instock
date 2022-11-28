@@ -15,6 +15,7 @@ import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 function App() {
   return (
     <BrowserRouter class='app' >
+      <div id="portal"></div>
       <Header />
       <main className="page-container" >
         <Routes >
