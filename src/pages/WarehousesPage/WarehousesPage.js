@@ -1,6 +1,4 @@
 
-import { useState } from "react";
-
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader"
@@ -9,27 +7,12 @@ import WarehousesList from "../../components/WarehousesList/WarehousesList";
 import { axiosInstance } from "../../helpers/axiosInstance";
 
 function WarehousesPage() {
-
   const [warehouseOrdered, setWarehouseOrdered] = useState(false)
   const [addressOrdered, setAddressOrdered] = useState(false)
   const [contactNameOrdered, setContactNameOrdered] = useState(false)
   const [contactInfoOrdered, setContactInfoOrdered] = useState(false)
-  return (
-    <>
-      <PageHeader type={"list"} text={"warehouses"}/>
-      <WarehousesHeadings
-        setWarehouseOrdered={setWarehouseOrdered}
-        setAddressOrdered={setAddressOrdered}
-        setContactNameOrdered={setContactNameOrdered}
-        setContactInfoOrdered={setContactInfoOrdered} />
-      <WarehousesList
-        warehouseOrdered={warehouseOrdered}
-        addressOrdered={addressOrdered}
-        contactNameOrdered={contactNameOrdered}
-        contactInfoOrdered={contactInfoOrdered}
-      />
 
-  //piece of state for all inventory
+    //piece of state for all inventory
   const [allWarehouses, setAllWarehouses] = useState([])
   //piece of state for inventory to show
   const [warehousesData, setWarehousesData] = useState([])
@@ -67,12 +50,20 @@ function WarehousesPage() {
         console.log(error)
       });
   }, []);
-
   return (
     <>
-    <PageHeader type={"list"} text={"warehouses"} searchParam={searchParam} />
-    <WarehousesHeadings />
-    <WarehousesList warehousesData={warehousesData} />
+      <PageHeader type={"list"} text={"warehouses"}/>
+      <WarehousesHeadings
+        setWarehouseOrdered={setWarehouseOrdered}
+        setAddressOrdered={setAddressOrdered}
+        setContactNameOrdered={setContactNameOrdered}
+        setContactInfoOrdered={setContactInfoOrdered} />
+      <WarehousesList
+        warehouseOrdered={warehouseOrdered}
+        addressOrdered={addressOrdered}
+        contactNameOrdered={contactNameOrdered}
+        contactInfoOrdered={contactInfoOrdered}
+      />
     </>
   )
 }
