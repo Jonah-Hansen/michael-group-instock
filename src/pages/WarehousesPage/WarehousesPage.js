@@ -8,9 +8,6 @@ const {
    REACT_APP_BACKEND_URL: URL = "http://localhost"
  } = process.env;
 
-//  whenever doing axios request 
-//  USE:    axios.get(`${URL}:${PORT}/warehouse`)
-
 function WarehousesPage() {
   return (
     <>
