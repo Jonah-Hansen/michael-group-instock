@@ -1,21 +1,7 @@
-import { useEffect, useState } from 'react';
-import { axiosInstance } from "../../helpers/axiosInstance";
 import WarehousesListItem from "../WarehousesListItem/WarehousesListItem";
 import "./WarehousesList.scss";
 
-function WarehousesList() {
-
-  const [warehousesData, setWarehousesData] = useState([])
-
-  useEffect(() => {
-    axiosInstance.get(`/warehouse`)
-      .then((response) => {
-        setWarehousesData(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-  }, []);
+function WarehousesList({warehousesData}) {
 
   return (
     <section className="warehouse-list">
