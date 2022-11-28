@@ -1,5 +1,7 @@
 import PageHeader from "../../components/PageHeader/PageHeader"
 import WarehousesHeadings from "../../components/WarehousesHeadings/WarehousesHeadings";
+import WarehousesList from "../../components/WarehousesList/WarehousesList";
+
 
 const {
    REACT_APP_PORT: PORT = "8080",
@@ -14,6 +16,7 @@ function WarehousesPage() {
     <>
     <PageHeader type={"list"} text={"warehouses"} />
     <WarehousesHeadings />
+    <WarehousesList />
     </>
   )
 }
