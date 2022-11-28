@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader"
 import WarehousesHeadings from "../../components/WarehousesHeadings/WarehousesHeadings";
 import WarehousesList from "../../components/WarehousesList/WarehousesList";
+import DeleteWarehouseModal from "../../components/DeleteWarehouseModal/DeleteWarehouseModal";
 import { axiosInstance } from "../../helpers/axiosInstance";
 
 function WarehousesPage() {
@@ -12,9 +13,14 @@ function WarehousesPage() {
   const [contactNameOrdered, setContactNameOrdered] = useState(false)
   const [contactInfoOrdered, setContactInfoOrdered] = useState(false)
 
-    //piece of state for all inventory
+  //piece of state for delete warehouse modal
+  const [show, setShow] = useState(false);
+  const [id, setId] = useState("");
+  const [warehouseName, setWarehouseName] = useState("")
+
+    //piece of state for all warehouses
   const [allWarehouses, setAllWarehouses] = useState([])
-  //piece of state for inventory to show
+  //piece of state for warehouses to show
   const [warehousesData, setWarehousesData] = useState([])
 
   const [searchParams, setSearchParams] = useSearchParams()
@@ -50,8 +56,34 @@ function WarehousesPage() {
         console.log(error)
       });
   }, []);
+
+
+  
+
+  const handleClick = (status, warehouseId, name) => {
+      setShow(status)
+      setId(warehouseId)
+      setWarehouseName(name)
+  }
+
+  const close = () => {
+    axiosInstance.get(`/warehouse/`)
+    .then((response) => {
+      setWarehousesData(response.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+    setShow(false)
+  }
+
   return (
     <>
+    <DeleteWarehouseModal
+      onClose={close}
+      show={show}
+      name={warehouseName}
+      warehouseId={id} />
       <PageHeader type={"list"} text={"warehouses"} searchParam={searchParam} />
       <WarehousesHeadings
         setWarehouseOrdered={setWarehouseOrdered}
@@ -65,6 +97,7 @@ function WarehousesPage() {
         addressOrdered={addressOrdered}
         contactNameOrdered={contactNameOrdered}
         contactInfoOrdered={contactInfoOrdered}
+        handleClick={handleClick}
       />
     </>
   )

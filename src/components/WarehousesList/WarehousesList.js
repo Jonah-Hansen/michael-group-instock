@@ -3,10 +3,9 @@ import "./WarehousesList.scss";
 import { useState, useEffect } from "react";
 import { axiosInstance } from "../../helpers/axiosInstance";
 
-function WarehousesList({ warehouseOrdered, addressOrdered, contactNameOrdered, contactInfoOrdered, warehousesData, setWarehousesData }) {
+function WarehousesList({ handleClick, warehouseOrdered, addressOrdered, contactNameOrdered, contactInfoOrdered, warehousesData, setWarehousesData }) {
 
-  // const [warehousesData, setWarehousesData] = useState([])
-
+  
   useEffect(() => {
     sortByWarehouse()
   }, [warehouseOrdered])
@@ -26,6 +25,7 @@ function WarehousesList({ warehouseOrdered, addressOrdered, contactNameOrdered, 
   return (
     <section className="warehouse-list">
       {warehousesData?.map(warehouseData => <WarehousesListItem
+        id={warehouseData.id}
         key={warehouseData.id}
         name={warehouseData.warehouse_name}
         address={warehouseData.address}
@@ -35,6 +35,7 @@ function WarehousesList({ warehouseOrdered, addressOrdered, contactNameOrdered, 
         contactPhone={warehouseData.contact_phone}
         contactEmail={warehouseData.contact_email}
         warehouseId={warehouseData.id}
+        handleClick={handleClick}
       />)}
     </section>
   )
