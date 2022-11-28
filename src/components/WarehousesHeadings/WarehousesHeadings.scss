@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as responsive;
+
+.wh-headings {
+    display: none;
+
+    @include responsive.tablet {
+        background-color: $background-light-grey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+
+        &__item {
+            display: flex;
+            flex-direction: row;
+            width: 20%;
+        }
+
+        &__title {
+            color: $secondary-slate;
+            font-size: .75rem;
+            align-content: center;
+            padding-top:0.25rem;
+            font-weight: 600;
+        }
+
+        &__action {
+            margin-right: 0;
+            width: 10%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

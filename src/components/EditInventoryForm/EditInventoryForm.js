@@ -11,7 +11,8 @@ import { useParams } from 'react-router-dom'
 
 export default function EditInventoryForm() {
   const [categories, setCategories] = useState([])
-  const [warehouses, setWarehouses] = useState([])
+const [warehouses, setWarehouses] = useState([])
+const [quantityShowsUp, setQuantityShowsUp] = useState(true)
   const navigate = useNavigate()
   //piece of state that holds an object of error messages
     const [error, setError] = useState({})
@@ -36,20 +37,23 @@ export default function EditInventoryForm() {
             item_name: name.value,
             description: description.value,
             category: category.value,
-            quantity: quantity.value,
+            quantity: quantity?.value || '0',
             status: status.value,
         }
 
-        if (validate.values(newItem).length !== 0 || true) {
             const err = {}
             //set error for invalid quantity
-            if (isNaN(newItem.quantity) || newItem.quantity < 0) {
+            if (isNaN(newItem.quantity) || parseInt(newItem.quantity) < 0) {
                 err['quantity'] = "Quantity must be a non-negative number"
-                //set error for keys with missing values
-                validate.values(newItem)
-                    .forEach(key => err[key] = 'this field is required')
-                setError(err)
-                return
+            if (parseInt(newItem.quantity) > 0 && newItem.status === "Out Of Stock")
+                err['quantity'] = "Status does not match quantity in stock"
+            if (parseInt(newItem.quantity) === 0 && newItem.status === "In Stock")
+                err['quantity'] = "Status does not match quantity in stock"
+            //set error for keys with missing values
+            validate.values(newItem)
+                .forEach(key => err[key] = 'this field is required')
+            setError(err)
+            if( validate.values(newItem).length !== 0 ||  err['quantity']) return console.log(err)
             }
             setError({})
             //put modified warehouse
@@ -64,7 +68,6 @@ export default function EditInventoryForm() {
                         console.error(err.response.data)
                         : alert('cant connect to server')
                 })
-        }
     }
         useEffect(() => {
             getCategories()
@@ -89,11 +92,11 @@ export default function EditInventoryForm() {
                         <div className='new-inventory-form-group'>
                             <label className='new-inventory-form-section__label'>Status</label>
                             <div className='new-inventory-form-section__radio-buttons'>
-                                <RadioButton text='In stock' name='status' checked={details.quantity > 0} />
-                                <RadioButton text="Out of stock" status='status' name='status' checked={parseInt(details.quantity) === 0} />
+                                <RadioButton text='In stock' name='status' value="In Stock" setQuantityShowsUp={ setQuantityShowsUp} />
+                                <RadioButton text="Out of stock" status='status' value="Out Of Stock" name='status' setQuantityShowsUp={ setQuantityShowsUp} />
                             </div>
                         </div>
-                        <TextInput type="small" label="Quantity" placeholder="0" name='quantity' error={error.quantity} value={details.quantity} />
+                        {quantityShowsUp && <TextInput type="small" label="Quantity" placeholder="0" name='quantity' error={error.quantity} value={details.quantity} />}
                         <div className='new-inventory-form-group'>
                             <label className='new-inventory-form-section__label'>Warehouse</label>
                             <DropDownMenu items={warehouses} name='warehouse' error={error.warehouse_id} value={details.warehouse} selected={details.warehouse_name} />
