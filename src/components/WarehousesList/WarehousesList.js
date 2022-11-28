@@ -3,10 +3,9 @@ import { axiosInstance } from "../../helpers/axiosInstance";
 import WarehousesListItem from "../WarehousesListItem/WarehousesListItem";
 import "./WarehousesList.scss";
 
-function WarehousesList() {
+function WarehousesList({handleClick, warehousesData , setWarehousesData}) {
 
-  const [warehousesData, setWarehousesData] = useState([])
-
+  
   useEffect(() => {
     axiosInstance.get(`/warehouse`)
       .then((response) => {
@@ -20,6 +19,7 @@ function WarehousesList() {
   return (
     <section className="warehouse-list">
       {warehousesData?.map(warehouseData => <WarehousesListItem
+        id={warehouseData.id}
         key={warehouseData.id}
         name={warehouseData.warehouse_name}
         address={warehouseData.address}
@@ -29,6 +29,7 @@ function WarehousesList() {
         contactPhone={warehouseData.contact_phone}
         contactEmail={warehouseData.contact_email}
         warehouseId={warehouseData.id}
+        handleClick={handleClick}
       />)}
     </section>
   )

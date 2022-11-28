@@ -5,7 +5,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import { useNavigate } from "react-router-dom";
 
 
-function WarehousesListItem ({name, address, city, country, contactName, contactPhone, contactEmail, warehouseId}) {
+function WarehousesListItem ({name, address, city, country, contactName, contactPhone, contactEmail, warehouseId, handleClick, id}) {
     const navigate = useNavigate()
 
     return (
@@ -34,7 +34,7 @@ function WarehousesListItem ({name, address, city, country, contactName, contact
             </div>
             <div className="wh-row__mobile-actions">
                 <div className="wh-row__actions">
-                    <img className="wh-row__actions-delete" src={deleteIcon} alt="red garbage can delete" />
+                    <img className="wh-row__actions-delete" src={deleteIcon} onClick={()=> handleClick(true, id, name)} alt="red garbage can delete" />
                     <img className="wh-row__actions-edit" src={editIcon} alt="blue pen representing edit" onClick={() => navigate(`/warehouses/${warehouseId}/edit`)}/>
                 </div>
             </div>
