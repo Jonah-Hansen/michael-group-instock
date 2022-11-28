@@ -3,19 +3,9 @@ import "./WarehousesList.scss";
 import { useState, useEffect } from "react";
 import { axiosInstance } from "../../helpers/axiosInstance";
 
-function WarehousesList({ warehouseOrdered, addressOrdered, contactNameOrdered, contactInfoOrdered }) {
+function WarehousesList({ warehouseOrdered, addressOrdered, contactNameOrdered, contactInfoOrdered, warehousesData, setWarehousesData }) {
 
-  const [warehousesData, setWarehousesData] = useState([])
-
-  useEffect(() => {
-    axiosInstance.get(`/warehouse`)
-      .then((response) => {
-        setWarehousesData(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-  }, []);
+  // const [warehousesData, setWarehousesData] = useState([])
 
   useEffect(() => {
     sortByWarehouse()

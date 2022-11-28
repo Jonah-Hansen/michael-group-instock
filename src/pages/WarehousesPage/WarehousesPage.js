@@ -52,13 +52,15 @@ function WarehousesPage() {
   }, []);
   return (
     <>
-      <PageHeader type={"list"} text={"warehouses"}/>
+      <PageHeader type={"list"} text={"warehouses"} searchParam={searchParam} />
       <WarehousesHeadings
         setWarehouseOrdered={setWarehouseOrdered}
         setAddressOrdered={setAddressOrdered}
         setContactNameOrdered={setContactNameOrdered}
         setContactInfoOrdered={setContactInfoOrdered} />
       <WarehousesList
+      warehousesData={warehousesData}
+      setWarehousesData={setAllWarehouses}
         warehouseOrdered={warehouseOrdered}
         addressOrdered={addressOrdered}
         contactNameOrdered={contactNameOrdered}
