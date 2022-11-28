@@ -20,7 +20,7 @@ function PageHeader({ type, text, searchParam }) {
       actions =
         <>
           <TextInput type='search' searchParam={searchParam} />
-          <Button text={`+ add a new ${text.includes('ventory') ? 'item' : 'warehouse'}`} onClick={() => navigate('./new')} />
+          <Button text={`+ add a new ${text.toLowerCase().includes('inventory') ? 'item' : 'warehouse'}`} onClick={() => navigate('./new')} />
         </>
       break;
     default:
