@@ -11,6 +11,12 @@
         justify-content: space-between;
         padding: 1.5rem 2rem;
 
+        &__icon {
+            position: relative;
+            top: -0.4rem;
+            width: 1.5rem;
+        }
+
         &__item {
             display: flex;
             flex-direction: row;
