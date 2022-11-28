@@ -57,3 +57,7 @@ button, input, select, textarea {
     box-shadow: 0 0 10px $secondary-cloud;
   }
 }
+
+button {
+  cursor: pointer;
+}
