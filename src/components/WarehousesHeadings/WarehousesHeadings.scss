@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as responsive;
 
-.inv-headings {
+.wh-headings {
     display: none;
 
     @include responsive.tablet {
@@ -9,41 +9,27 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 0.75rem 1rem;
+        padding: 1.5rem 2rem;
 
         &__item {
             display: flex;
             flex-direction: row;
-            width: 17%;
+            width: 20%;
         }
 
         &__title {
             color: $secondary-slate;
-            font-size: .7rem;
+            font-size: .75rem;
             align-content: center;
             padding-top:0.25rem;
             font-weight: 600;
         }
 
         &__action {
-            margin-right: 1rem;
-        }
-
-    }
-
-    &__qty {
-        @include responsive.tablet {
-            display: none;
-        }
-
-        @include responsive.desktop {
-            display: contents;
-        }
-    }
-
-    &__qtytab {
-        @include responsive.desktop {
-            display: none;
+            margin-right: 0;
+            width: 10%;
+            display: flex;
+            justify-content: flex-end;
         }
     }
 }

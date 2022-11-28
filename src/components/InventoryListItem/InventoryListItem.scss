@@ -61,6 +61,7 @@
   display: flex;
   flex-direction: row;
   width: 6rem;
+  transition: 0.9 ease;
 
   &-item {
     display: flex;
@@ -69,7 +70,16 @@
     align-items: center;
     color: $primary-instock-indigo;
     font-size: .815rem;
-    cursor: pointer;
+    transition: transform 1s;
+  }
+
+  &:hover &-icon {
+    transform: translateX(4px) ;
+  }
+
+  &-icon {
+    transition: transform 0.3s ease;
+    width: 1.2rem;
   }
 
 }

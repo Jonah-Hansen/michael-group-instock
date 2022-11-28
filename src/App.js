@@ -10,16 +10,18 @@ import InventoryItemPage from "./pages/InventoryItemPage/InventoryItemPage";
 import NewWarehousePage from "./pages/NewWarehousePage/NewWarehousePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
+import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 
 function App() {
   return (
     <BrowserRouter class='app' >
+      <div id="portal"></div>
       <Header />
       <main className="page-container" >
         <Routes >
           <Route path="/" element={<Navigate to='/warehouses' />} />
           {/* Warehouse Routes */}
-          <Route path="/warehouses" />
+          <Route path="/warehouses" element={<WarehousesPage />} />
           <Route path="/warehouses/:warehouseid" element={<WarehouseDetailsPage />} />
           <Route path="/warehouses/:warehouseid/edit" element={<EditWarehousePage />} />
           <Route path="/warehouses/new" element={<NewWarehousePage />} />
