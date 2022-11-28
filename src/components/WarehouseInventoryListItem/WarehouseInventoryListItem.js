@@ -2,8 +2,13 @@ import "./WarehouseInventoryListItem.scss";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
+import axios from "axios";
+import DeleteInventoryModal from "../DeleteInventoryModal/DeleteInventoryModal";
 
-function WarehouseInventoryListItem ({name , quantity , category , status}) {
+
+function WarehouseInventoryListItem ({name , quantity , category , status, id , handleClick }) {
+
+    console.log(id);
 
     return (
         <div className="inv-row">
@@ -27,7 +32,7 @@ function WarehouseInventoryListItem ({name , quantity , category , status}) {
                 <p className="inv-row__quantity">{quantity}</p>
             </div>
             <div className="inv-row__actions">
-                <img className="inv-row__actions-delete" src={deleteIcon} alt="red garbage can delete" />
+                <img className="inv-row__actions-delete" src={deleteIcon} onClick={() => handleClick(true, id, name)} alt="red garbage can delete" />
                 <img className="inv-row__actions-edit" src={editIcon} alt="blue pen representing edit" />
             </div>
         </div>
