@@ -1,4 +1,5 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as responsive;
 
 .inv-row {
     display: flex;
@@ -6,14 +7,11 @@
     justify-content: space-between;
     border-bottom: 1px solid $secondary-cloud;
     padding: 1rem;
+    flex-wrap: wrap;
 
     &__cat {
         width: 10%;
         font-size: .815rem;
-    }
-
-    &__stock {
-        
     }
 
     &__in-stock {
@@ -25,6 +23,7 @@
         white-space: nowrap;
         font-weight: 600;
         font-size: 0.815rem;
+        text-align: center;
     }
 
     &__out-stock {
@@ -36,6 +35,7 @@
         white-space: nowrap;
         font-weight: 600;
         font-size: 0.815rem;
+        text-align: center;
     }
 
     &__quantity {
@@ -46,6 +46,12 @@
     &__actions {
         display: flex;
         flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+
+        @include responsive.tablet {
+            width: auto;
+        }
     
         &-delete {
             margin-right: 1rem;
@@ -59,8 +65,16 @@
 
 .inv-row__inv {
     display: flex;
-    flex-direction: row;
-    width: 6rem;
+    flex-direction: column;
+    order: 1;
+    width: 50%;
+
+    @include responsive.tablet {
+        display: flex;
+        flex-direction: row;
+        width: 10%;
+    }
+    
 
     &-item {
         display: flex;
@@ -71,4 +85,57 @@
         font-size: .815rem;
     }
 
+    &-item-con {
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+    }
+
+}
+
+.inv-row__inv-heading--mobile {
+    font-size: .7rem;
+
+
+    @include responsive.tablet {
+        display: none;
+    }
+}
+
+.inv-row__cat-mobile {
+    order: 3;
+    width: 50%;
+    margin-bottom: 1rem;
+
+    @include responsive.tablet {
+        order: 2;
+        width: 10%;
+        margin-bottom: 0rem;
+    }
+}
+
+.inv-row__stock {
+    order: 2;
+    width: 50%;
+    margin-bottom: 1rem;
+
+    @include responsive.tablet {
+        order: 3;
+        width: 15%;
+        margin-bottom: 0rem;
+    }
+}
+
+.inv-row__quantity-mobile {
+    order: 4;
+    width: 50%;
+
+    @include responsive.tablet {
+        order: 4;
+        width: 6%;
+    }
+}
+
+.inv-row__actions {
+    order: 5;
 }
