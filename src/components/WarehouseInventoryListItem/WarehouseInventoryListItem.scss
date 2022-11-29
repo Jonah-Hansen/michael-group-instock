@@ -24,6 +24,7 @@
         font-weight: 600;
         font-size: 0.815rem;
         text-align: center;
+        max-width: min-content;
     }
 
     &__out-stock {
@@ -36,6 +37,7 @@
         font-weight: 600;
         font-size: 0.815rem;
         text-align: center;
+        max-width: min-content;
     }
 
     &__quantity {
