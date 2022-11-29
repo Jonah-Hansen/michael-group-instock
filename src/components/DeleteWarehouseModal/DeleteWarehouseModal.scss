@@ -1,0 +1,112 @@
+@use "../../styles/partials/mixins" as responsive;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+
+.overlay {
+    display: none;
+
+    @include responsive.tablet {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 50;
+        background: rgba(0, 0, 0, 0.835);
+    }
+
+}
+.delete-container {
+    
+    z-index: 5341324;
+    position: fixed;
+    height: 100%;
+    background-color: $primary-instock-white;
+    
+    @include responsive.tablet {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        width: 80%;
+        height: 16rem;
+    }
+
+    @include responsive.desktop {
+        width: 50%
+    }
+    
+}
+
+.delete {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 52;
+
+    &-header {
+        padding: 1rem;
+    }
+
+    &-body {
+        height: 85vh;
+        padding: 0 1rem;
+
+        @include responsive.tablet {
+            height: 8rem;
+            padding: 0 5rem;
+
+            &__title {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+
+        @include responsive.tablet {
+            justify-content: flex-end;
+            padding-right: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        &__cancel {
+            color: $primary-instock-black;
+            background-color: $primary-instock-white;
+            border: 1px solid $secondary-slate;
+            border-radius: 1.25rem;
+            width: 47.5%;
+            height: 2.25rem;
+            font-size: .8125rem;
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 600;
+
+            @include responsive.tablet {
+                width: 10%;
+            }
+        }
+
+        &__delete {
+            color: $primary-instock-white;
+            background-color: $supporting-red;
+            border-radius: 1.25rem;
+            border: none;
+            width: 47.5%;
+            height: 2.25rem;
+            font-size: .8125rem;
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 600;
+
+            @include responsive.tablet {
+                width: 10%;
+                margin-left: 1rem;
+            }
+        }
+    }
+}

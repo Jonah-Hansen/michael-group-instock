@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as responsive;
 
-.inventories-headings {
+.wh-headings {
     display: none;
 
     @include responsive.tablet {
@@ -9,9 +9,11 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 0.75rem 1rem;
+        padding: 1.5rem 2rem;
 
-        & img {
+        &__icon {
+            position: relative;
+            top: -0.4rem;
             width: 1.5rem;
         }
 
@@ -23,21 +25,17 @@
 
         &__title {
             color: $secondary-slate;
-            font-size: .7rem;
+            font-size: .75rem;
             align-content: center;
             padding-top:0.25rem;
             font-weight: 600;
-            width: auto;
-
-            &--name {
-                width: auto;
-            }
         }
 
         &__action {
-            margin-right: 1rem;
+            margin-right: 0;
+            width: 10%;
+            display: flex;
+            justify-content: flex-end;
         }
-
     }
-
 }

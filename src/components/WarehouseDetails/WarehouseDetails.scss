@@ -10,12 +10,14 @@ p {
     flex-direction: column;
     padding: 1rem;
     border-bottom: 1px solid $secondary-cloud;
+    border-top: 1px solid $secondary-cloud;
 
     @include responsive.tablet {
         flex-direction: row;
         border: none;
-
+        border-top: 1px solid $secondary-cloud;
     }
+
 }
 
 .wh-address {
@@ -23,8 +25,14 @@ p {
 
     @include responsive.tablet {
         border-right: 1px solid $secondary-cloud;
-        padding-right: 23%;
+        padding-right: 14%;
         margin-bottom: 0rem;
+        margin-left: 1rem;
+    }
+
+    @include responsive.desktop {
+        margin-left: 1.5rem;
+        padding-right: 15rem;
     }
     
     &__title {
@@ -45,7 +53,7 @@ p {
 .wh-contact {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     @include responsive.tablet {
         margin-left: 3%;
@@ -58,6 +66,10 @@ p {
     @include responsive.tablet {
         padding-left: 2rem;
         margin-right: 1rem;
+    }
+
+    @include responsive.desktop {
+        padding-left: 1rem;
     }
    
     &__title {
@@ -81,6 +93,10 @@ p {
     
     @include responsive.tablet {
       margin-left: 7%;
+    }
+
+    @include responsive.desktop {
+        margin-left: 4rem;
     }
    
     &__title {
