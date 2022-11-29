@@ -13,6 +13,9 @@ function WarehouseDetailsPage() {
   const {warehouseid} = useParams();
 
   const [warehouseData, setWarehouseData] = useState([])
+  
+document.title = `In Stock | ${warehouseData.warehouse_name} Warehouse`
+
 
   useEffect(() => {
     axiosInstance.get(`/warehouse/${warehouseid}`)
