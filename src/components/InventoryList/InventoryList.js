@@ -42,17 +42,14 @@ function InventoryList({ itemOrdered, categoryOrdered, statusOrdered, quantityOr
     setInventoryName(name)
 }
 
-const close = () => {
-  axiosInstance.get(`/inventory`)
-  .then((response) => {
-    setInventoryData(response.data)
-  })
+  const close = () => {
+    populateData()
+    
   .catch((error) => {
     console.log(error)
   });
   setShow(false)
 }
-
   return (
     <>
       <section className="non-mobile-list">
@@ -128,6 +125,15 @@ const close = () => {
     try {
       if (warehouseOrdered) response = await axiosInstance.get('/inventory/sortByWarehouseASC')
       else response = await axiosInstance.get('/inventory/sortByWarehouseDESC')
+      setInventoryData(response.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  async function populateData() {
+    try {
+      const response = await axiosInstance.get('/inventory/joinWarehouse/name')
       setInventoryData(response.data)
     } catch (error) {
       console.log(error)

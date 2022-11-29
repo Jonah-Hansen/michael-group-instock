@@ -2,6 +2,7 @@ import "./DeleteInventoryModal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg"
 import ReactDOM from "react-dom";
 import { axiosInstance } from "../../helpers/axiosInstance";
+import { useEffect } from "react";
 
 
 function DeleteInventoryModal ({ onClose , show , name, inventoryId }) {
@@ -38,6 +39,8 @@ function DeleteInventoryModal ({ onClose , show , name, inventoryId }) {
         </section>,
         document.getElementById('portal')
     )
+
+
 }
 
 export default DeleteInventoryModal;
