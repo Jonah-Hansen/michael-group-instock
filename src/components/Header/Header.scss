@@ -27,6 +27,11 @@
     display: flex;
     justify-content: center;
     padding-top: 1.5rem;
+
+    &-link {
+      display: block;
+      height: fit-content;
+    }
   }
 
 }
