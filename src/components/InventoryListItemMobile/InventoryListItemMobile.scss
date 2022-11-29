@@ -3,9 +3,11 @@
 
 .container {
     border-top: 1px solid $secondary-cloud;
-    height: 5rem;
-    margin-bottom: 6rem;
-    padding: 0 1rem 5.5rem 1rem;
+    padding: 0 1rem 1rem 1rem;
+
+    &:hover {
+        background-color: rgb(240, 244, 253);
+    }
 }
 
 .item {
