@@ -31,9 +31,6 @@ function WarehouseInventoryList() {
       setShow(status)
       setId(inventoryId)
       setInventoryName(name)
-      console.log(inventoryId)
-      console.log(status)
-      console.log(name)
   }
 
   const close = () => {
