@@ -7,6 +7,7 @@
     flex-direction: column;
     padding: 1rem;
     gap: 1rem;
+    border-top: 1px solid $secondary-cloud;
 
     @include tablet {
         flex-direction: row;
