@@ -1,15 +1,18 @@
 # Instock Inventory Management App
-## Group Project for BrainStation sept 2022 online
+ Group Project for BrainStation sept 2022 online
 
-## by:
+### by:
 
-[Jonah Hansen](https://www.linkedin.com/in/jonah-hansen-dev/)
-[Lucas Rodrigues](https://www.linkedin.com/in/lucasoctavianorodrigues/)
-[Adam Pietrangelo](https://www.linkedin.com/in/adam-pietrangelo-dev/)
-[Marcelo Brasil](https://www.linkedin.com/in/marcelo-vital-brasil/)
+## [Jonah Hansen](https://www.linkedin.com/in/jonah-hansen-dev/) 
+## [Lucas Rodrigues](https://www.linkedin.com/in/lucasoctavianorodrigues/) 
+## [Adam Pietrangelo](https://www.linkedin.com/in/adam-pietrangelo-dev/) 
+## [Marcelo Brasil](https://www.linkedin.com/in/marcelo-vital-brasil/)
 
 
-### made with love, this was a lot of fun and our first time working collaboratively on a project of this scale!
+ made with love, this was a lot of fun and our first time working collaboratively on a project of this scale!
+
+
+uses React, Node, Express and MySQL to provide a full CRUD warehouse/inventory management system.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
