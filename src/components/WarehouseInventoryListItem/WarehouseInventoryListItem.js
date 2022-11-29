@@ -5,8 +5,6 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 
 function WarehouseInventoryListItem ({name , quantity , category , status, id , handleClick }) {
 
-    console.log(id);
-
     return (
         <div className="inv-row">
             <div className="inv-row__inv">
