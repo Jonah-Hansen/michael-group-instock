@@ -14,6 +14,14 @@
   }
 }
 
+// width 891px breakpoint
+@mixin width891 {
+  @media screen and (min-width: $width-891) {
+    @content;
+  }
+    
+}
+
 // edge padding
 @mixin edge-padding($breakpoint) {
   @if $breakpoint ==mobile {
