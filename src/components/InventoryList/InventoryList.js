@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { axiosInstance } from "../../helpers/axiosInstance";
 import InventoryListItem from "../InventoryListItem/InventoryListItem";
 import InventoryListItemMobile from '../InventoryListItemMobile/InventoryListItemMobile';
@@ -8,22 +8,27 @@ function InventoryList({ itemOrdered, categoryOrdered, statusOrdered, quantityOr
 
   useEffect(() => {
     sortByItem()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemOrdered])
 
   useEffect(() => {
     sortByCategory()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoryOrdered])
 
   useEffect(() => {
     sortByQuantity()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quantityOrdered])
 
   useEffect(() => {
     sortByStatus()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [statusOrdered])
 
   useEffect(() => {
     sortByWarehouse()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [warehouseOrdered])
 
   return (

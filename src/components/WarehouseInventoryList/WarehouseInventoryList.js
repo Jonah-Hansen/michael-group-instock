@@ -10,17 +10,15 @@ function WarehouseInventoryList() {
   const {warehouseid}= useParams();
   const [inventoryData, setInventoryData] = useState([])
 
-  console.log(warehouseid);
   useEffect(() => {
     axiosInstance.get(`/warehouse/${warehouseid}/inventory`)
       .then((response) => {
-        console.log(response.data)
         setInventoryData(response.data)
       })
       .catch((error) => {
         console.log(error)
       });
-  }, []);
+  }, [warehouseid]);
 
   const [show, setShow] = useState(false);
   const [id, setId] = useState("");
@@ -31,9 +29,6 @@ function WarehouseInventoryList() {
       setShow(status)
       setId(inventoryId)
       setInventoryName(name)
-      console.log(inventoryId)
-      console.log(status)
-      console.log(name)
   }
 
   const close = () => {
