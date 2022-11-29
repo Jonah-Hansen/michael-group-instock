@@ -2,9 +2,9 @@ import "./InventoryListItemMobile.scss";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
-export default function InventoryListItemMobile({ item }) {
+export default function InventoryListItemMobile({ item, handleClick }) {
     const navigate = useNavigate()
     return (
       <div className="container">
@@ -38,8 +38,8 @@ export default function InventoryListItemMobile({ item }) {
           
     </div>
     <div className="item-row">
-        <img className="inv-row__actions-delete" src={deleteIcon} alt="red garbage can delete" />
-        <img className="inv-row__actions-edit" src={editIcon} alt="blue pen representing edit" onClick={() => navigate(`/inventories/${item.id}/edit`)}/>
+       <Link to={""}> <img className="inv-row__actions-delete" src={deleteIcon} alt="red garbage can delete" onClick={()=> handleClick(true, item.id, item.item_name)}/></Link>
+       <Link to={`/inventories/${item.id}/edit`}><img className="inv-row__actions-edit" src={editIcon} alt="blue pen representing edit"/></Link>
     </div>
     </div>
   )

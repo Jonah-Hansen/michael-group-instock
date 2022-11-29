@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { axiosInstance } from "../../helpers/axiosInstance";
 import InventoryListItem from "../InventoryListItem/InventoryListItem";
 import InventoryListItemMobile from '../InventoryListItemMobile/InventoryListItemMobile';
+import DeleteInventoryModal from '../DeleteInventoryModal/DeleteInventoryModal';
 import "./InventoryList.scss";
 
 function InventoryList({ itemOrdered, categoryOrdered, statusOrdered, quantityOrdered, warehouseOrdered, inventoryData, setInventoryData }) {
@@ -31,18 +32,48 @@ function InventoryList({ itemOrdered, categoryOrdered, statusOrdered, quantityOr
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [warehouseOrdered])
 
+  const [show, setShow] = useState(false);
+  const [id, setId] = useState("");
+  const [inventoryName, setInventoryName] = useState("")
+
+  const handleClick = (status, inventoryId, name) => {
+    setShow(status)
+    setId(inventoryId)
+    setInventoryName(name)
+}
+
+const close = () => {
+  axiosInstance.get(`/inventory`)
+  .then((response) => {
+    setInventoryData(response.data)
+  })
+  .catch((error) => {
+    console.log(error)
+  });
+  setShow(false)
+}
+
   return (
     <>
       <section className="non-mobile-list">
+
+      <DeleteInventoryModal 
+        onClose={close}
+        show={show}
+        name={inventoryName}
+        inventoryId={id}/>
+
         {inventoryData?.map((item, index) => <InventoryListItem
             key={index}
             item={ item}
+            handleClick={handleClick}
             />)}
       </section>
       <section className="mobile-list">
         {inventoryData?.map((item, index) => <InventoryListItemMobile
             key={index}
             item={ item}
+            handleClick={handleClick}
             />)}
       </section>
     </>
