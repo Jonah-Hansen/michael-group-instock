@@ -45,7 +45,7 @@ export default function NewInventoryItemForm() {
       validate.values(newInventoryItem)
         .forEach(key => err[key] = 'this field is required')
       setError(err)
-      if( validate.values(newInventoryItem).length !== 0 ||  err['quantity']) return console.log(err)
+      if( validate.values(newInventoryItem).length !== 0 ||  err['quantity']) return 
 
     setError({})
 
