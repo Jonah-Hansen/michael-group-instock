@@ -1,7 +1,7 @@
 import "./DeleteWarehouseModal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg"
 import ReactDOM from "react-dom";
-import axios from "axios";
+import { axiosInstance } from "../../helpers/axiosInstance";
 
 function DeleteWarehouseModal ({ onClose , show , name, warehouseId }) {
 
@@ -11,7 +11,7 @@ function DeleteWarehouseModal ({ onClose , show , name, warehouseId }) {
     };
 
     const handleSubmit = () => {
-        axios.delete(`http://localhost:8080/warehouse/${warehouseId}`)
+        axiosInstance.delete(`/warehouse/${warehouseId}`)
         .then(()=> {
             onClose();
         })

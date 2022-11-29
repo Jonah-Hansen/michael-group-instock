@@ -1,7 +1,7 @@
 import "./DeleteInventoryModal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg"
 import ReactDOM from "react-dom";
-import axios from "axios";
+import { axiosInstance } from "../../helpers/axiosInstance";
 
 
 function DeleteInventoryModal ({ onClose , show , name, inventoryId }) {
@@ -11,7 +11,7 @@ function DeleteInventoryModal ({ onClose , show , name, inventoryId }) {
     }
 
     const handleSubmit = () => {
-        axios.delete(`http://localhost:8080/inventory/${inventoryId}`)
+        axiosInstance.delete(`/inventory/${inventoryId}`)
         .then(()=> {
             onClose();
         })
