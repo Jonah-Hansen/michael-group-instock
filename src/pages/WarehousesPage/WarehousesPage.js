@@ -7,7 +7,10 @@ import WarehousesList from "../../components/WarehousesList/WarehousesList";
 import DeleteWarehouseModal from "../../components/DeleteWarehouseModal/DeleteWarehouseModal";
 import { axiosInstance } from "../../helpers/axiosInstance";
 
+
 function WarehousesPage() {
+  document.title = "In Stock | Warehouses"
+  
   const [warehouseOrdered, setWarehouseOrdered] = useState(false)
   const [addressOrdered, setAddressOrdered] = useState(false)
   const [contactNameOrdered, setContactNameOrdered] = useState(false)
