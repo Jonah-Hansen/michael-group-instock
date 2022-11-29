@@ -56,7 +56,7 @@ function TextInput({ type, label, placeholder, name, value, className, error, se
   }
 
   return (
-    <label className={`text-input ${className ? className : ''}`}>
+    <label className={`text-input${type === 'search' ? '--search' : ''} ${className ? className : ''}`}>
       <h3 className='text-input__heading' >{label}</h3>
       {input}
       {error &&

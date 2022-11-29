@@ -3,11 +3,11 @@ import EditInventoryForm from '../../components/EditInventoryForm/EditInventoryF
 import PageHeader from '../../components/PageHeader/PageHeader'
 
 export default function EditInventoryPage() {
-    document.title = "In Stock | Edit Inventory"
+    document.title = "In Stock | Edit Inventory Item"
   return (
     <>
-          <PageHeader text={'Edit Inventory Item'} />
-          <EditInventoryForm />
+      <PageHeader text={'Edit Inventory Item'} />
+      <EditInventoryForm />
     </>
   )
 }

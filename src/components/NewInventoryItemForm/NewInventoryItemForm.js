@@ -12,6 +12,7 @@ export default function NewInventoryItemForm() {
   const [categories, setCategories] = useState([])
   const [warehouses, setWarehouses] = useState([])
   const [quantityShowsUp, setQuantityShowsUp] = useState(true)
+  const [statusChecked, setStatusChecked] = useState("In Stock")
   const navigate = useNavigate()
   //piece of state that holds an object of error messages
   const [error, setError] = useState({})
@@ -42,9 +43,9 @@ export default function NewInventoryItemForm() {
         err['quantity'] = "Status does not match quantity in stock"
       //set error for keys with missing values
       validate.values(newInventoryItem)
-        .forEach(key => err[key] = 'this field is required')
+        .forEach(key => err[key] = 'This Field is Required')
       setError(err)
-      if( validate.values(newInventoryItem).length !== 0 ||  err['quantity']) return console.log(err)
+      if( validate.values(newInventoryItem).length !== 0 ||  err['quantity']) return 
 
     setError({})
 
@@ -82,8 +83,8 @@ export default function NewInventoryItemForm() {
           <div className='new-inventory-form-group'>
             <label className='new-inventory-form-section__label'>Status</label>
             <div className='new-inventory-form-section__radio-buttons'>
-              <RadioButton text='In stock' name='status' value='In Stock' setQuantityShowsUp={ setQuantityShowsUp} />
-              <RadioButton text="Out of stock" value='Out Of Stock' name='status' setQuantityShowsUp={ setQuantityShowsUp}/>
+              <RadioButton text='In stock' name='status' value='In Stock' setStatusChecked={setStatusChecked}  setQuantityShowsUp={setQuantityShowsUp} checked={statusChecked === "In Stock"} />
+              <RadioButton text="Out of stock" value='Out Of Stock' setStatusChecked={setStatusChecked} name='status' setQuantityShowsUp={setQuantityShowsUp} checked={ statusChecked === "Out Of Stock"} />
             </div>
           </div>
           {quantityShowsUp && <TextInput type="small" label="Quantity" placeholder="0" name='quantity' error={error.quantity} className={`${''}`} />}
@@ -94,7 +95,7 @@ export default function NewInventoryItemForm() {
         </section>
       </div>
       <div className='new-inventory-form-buttons'>
-        <Button type='cancel' text={'cancel'} />
+        <Button type='cancel' text={'cancel'} onClick={() => navigate('/inventories')} />
         <Button text={'+ add item'} type='submit' />
       </div>
     </form>

@@ -7,6 +7,8 @@ import { axiosInstance } from '../../helpers/axiosInstance';
 import './InventoriesListPage.scss';
 
 export default function InventoriesListPage() {
+  document.title = `In Stock | Inventory`
+
   //piece of state for all inventory
   const [allInventory, setAllInventory] = useState([])
   //piece of state for inventory to show

@@ -2,7 +2,6 @@ import React from 'react'
 import './InventoryItemDetail.scss'
 
 export default function InventoryItemDetail({ item }) {
-document.title = "In Stock | Inventory Item"
   return (
     <div className='item-detail'>
         <section className='item-detail-section'>

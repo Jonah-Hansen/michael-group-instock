@@ -9,6 +9,10 @@
     padding: 1rem;
     flex-wrap: wrap;
 
+    &:hover {
+      background-color: rgb(240, 244, 253);
+    }
+
     &__cat {
         margin-left: 0.6rem;
         font-size: .815rem;
@@ -24,6 +28,7 @@
         font-weight: 600;
         font-size: 0.815rem;
         text-align: center;
+        max-width: min-content;
     }
 
     &__out-stock {
@@ -36,6 +41,7 @@
         font-weight: 600;
         font-size: 0.815rem;
         text-align: center;
+        max-width: min-content;
     }
 
     &__quantity {
@@ -55,10 +61,12 @@
     
         &-delete {
             margin-right: 1rem;
+            cursor: pointer;
         }
 
         &-edit {
             margin-right: 1rem;
+            cursor: pointer;
         }
     }
 }
@@ -83,6 +91,7 @@
         align-items: center;
         color: $primary-instock-indigo;
         font-size: .815rem;
+        cursor: pointer;
     }
 
     &-item-con {

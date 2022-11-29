@@ -6,6 +6,15 @@
   flex-direction: column;
   gap: .25rem;
   text-transform: capitalize;
+  width: 100%;
+
+  &--search {
+    @extend .text-input;
+    @include tablet {
+      width: min-content;
+    }
+  }
+
 
   &__heading {
     font-size: .8125rem;
@@ -54,6 +63,10 @@
       background: url('../../assets/icons/search-24px.svg') no-repeat right 1rem center;
       padding-right: 2.5rem;
       text-transform: none;
+
+      @include tablet {
+        width: 10rem;
+      }
     }
 
     &--contact {

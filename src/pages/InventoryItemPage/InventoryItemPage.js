@@ -3,22 +3,22 @@ import InventoryItemDetail from '../../components/InventoryItemDetail/InventoryI
 import PageHeader from '../../components/PageHeader/PageHeader'
 import { useParams } from 'react-router-dom'
 import { axiosInstance } from '../../helpers/axiosInstance'
-import './InventoryItemPage.scss'
 
 export default function InventoryItemPage() {
-  const [item, setItem] = useState()
+  const [item, setItem] = useState([])
   const { inventoryid: id } = useParams()
+
+  document.title = `In Stock | ${item.item_name} details`
+
   useEffect(() => {
     populateData(id)
   }, [id])
   if(!item) return "Loading..."
   return (
-    <div className='background'>
-      <div className='page'>
-        <PageHeader text={`${item?.item_name}`} type={'details'} />
-        <InventoryItemDetail item={item} />
-      </div>
-    </div>
+    <>
+      <PageHeader text={`${item?.item_name}`} type={'details'} />
+      <InventoryItemDetail item={item} />
+    </>
   )
 
 async function populateData(id) {
