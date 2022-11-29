@@ -43,7 +43,7 @@ export default function NewInventoryItemForm() {
         err['quantity'] = "Status does not match quantity in stock"
       //set error for keys with missing values
       validate.values(newInventoryItem)
-        .forEach(key => err[key] = 'this field is required')
+        .forEach(key => err[key] = 'This Field is Required')
       setError(err)
       if( validate.values(newInventoryItem).length !== 0 ||  err['quantity']) return 
 

@@ -6,6 +6,10 @@
   border-bottom: 1px solid $secondary-cloud;
   padding: 1rem;
 
+  &:hover {
+    background-color: rgb(240, 244, 253);
+  }
+
   &__cat {
     font-size: .815rem;
     width: 20%;

@@ -6,7 +6,7 @@ export default function DropDownMenu({ items, name, error, selected }) {
   const [isSelected, setIsSelected] = useState(selected)
   return (
     <>
-      <select className='drop-down-menu' name={name} value={isSelected || selected} onChange={ (e) => setIsSelected(e.target.value)}>
+      <select className={`drop-down-menu ${error ? 'error' : ''}`} name={name} value={isSelected || selected} onChange={ (e) => setIsSelected(e.target.value)}>
       <option value="" hidden>Please select</option>
         {items.map((item, index) => <option key={index} value={item}>{item}</option>)}
       </select>
