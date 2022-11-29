@@ -88,6 +88,7 @@
     color: $primary-instock-indigo;
     font-size: .815rem;
     transition: transform 1s;
+    cursor: pointer;
   }
 
   &:hover &-icon {

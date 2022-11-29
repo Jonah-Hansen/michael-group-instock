@@ -15,6 +15,10 @@
             display: flex;
             flex-direction: row;
             width: 20%;
+
+            & > img {
+              cursor: pointer;
+            }
         }
 
         &__title {
