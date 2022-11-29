@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { axiosInstance } from "../../helpers/axiosInstance";
 import InventoryListItem from "../InventoryListItem/InventoryListItem";
 import InventoryListItemMobile from '../InventoryListItemMobile/InventoryListItemMobile';
