@@ -2,9 +2,6 @@ import "./WarehouseInventoryListItem.scss";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
-import axios from "axios";
-import DeleteInventoryModal from "../DeleteInventoryModal/DeleteInventoryModal";
-
 
 function WarehouseInventoryListItem ({name , quantity , category , status, id , handleClick }) {
 
