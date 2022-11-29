@@ -94,7 +94,7 @@ export default function NewInventoryItemForm() {
         </section>
       </div>
       <div className='new-inventory-form-buttons'>
-        <Button type='cancel' text={'cancel'} />
+        <Button type='cancel' text={'cancel'} onClick={() => navigate('/inventories')} />
         <Button text={'+ add item'} type='submit' />
       </div>
     </form>
