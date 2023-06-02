@@ -8,6 +8,7 @@
 ## [Adam Pietrangelo](https://www.linkedin.com/in/adam-pietrangelo-dev/) 
 ## [Marcelo Brasil](https://www.linkedin.com/in/marcelo-vital-brasil/)
 
+## try it out live: https://instock-groupproject.vercel.app/warehouses
 
  made with love, this was a lot of fun and our first time working collaboratively on a project of this scale!
 
